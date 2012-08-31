@@ -1,0 +1,29 @@
+<html>
+
+<head>
+<title>Prime Plague</title>
+</head>
+
+<body>
+<p>
+<b>Prime Plague</b>
+<p>
+Similar to Life, but creates a creeping plague.  Cells are born if they 
+have exactly 3 "alive" neighbors.  They survive if they have a prime 
+number of neighbors. Otherwise they die.
+<p>
+Only cells that have state 1 are counted as "alive".  When a cell 
+dies, it slowly fades away by cycling through the higher valued 
+states.  Once the highest state is reached, the cell is set to state 
+0.  These higher valued states take space on the grid, but they do 
+not count as alive neighbors. 
+<p>
+<b>Note</b> that this is the same rule as <a href="PistonPrime.html">Piston Prime</a> which only has 
+4 states on an eight-neighbor square lattice. This rule has 13 states 
+on a twelve-neighbor triangular lattice. The difference in behavior is 
+dramatic. 
+<p>
+Invented by David Bahr.
+</body>
+
+</html>

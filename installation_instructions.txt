@@ -1,0 +1,37 @@
+INSTALLATION INSTRUCTIONS
+
+System Requirements:
+1. Java 1.6 or a later version, available for free at http://java.com.
+2. Recommend a minimum of 1GB RAM but will run with as little as 256MB.
+3. Tested on PC and linux.  Not tested on Mac, but should run (no guarantees).
+
+Installation Instructions:
+1. Uninstall any previous version.  (Save and back up any rules and analyses that you might have written.)
+2. Download the CA_ExplorerInstaller.exe (for windows) or CA_Explorer5_0.zip (for mac/unix/other).
+3. Double click to install on windows.  On other platforms, unzip the file (macs will unzip the file for you automatically with a double click). 
+4. If desired, drag the "Cellular Automaton Explorer" icon onto the dock (mac).
+
+Running:
+1. Double-click the "Cellular Automaton Explorer" icon to run the program.
+2. Or if the icon isn't visible, double-click CA_Explorer.jar.
+3. Select "Getting Started" from the help menu.
+
+
+Troubleshooting:
+1. Does the application claim that some rules or analyses will not work? Before starting, did you uninstall any previous version?  If not, uninstall and reinstall the application. (Save and back up any rules and analyses that you might have written.)
+1. Have you installed the latest version of the Java runtime environment?  You'll need version 1.6 or later, available for free at http://java.com. (Macs require version 1.5 or later.)
+2. Mac users can drag the icon onto the dock, but they cannot drag the icon onto the desktop without errors. Instead, if you want the application on the mac desktop, create an alias (ctrl-click the application) and drag the alias onto the desktop.
+3. It's unlikely, but some older operating systems may require that you add the CA_Explorer.jar to your CLASSPATH environment variable. Example: On Windows, you will probably put your application in the Program Files directory.  In that case add ".;C:\Program Files\ca_explorer\CA_Explorer.jar;" to your CLASSPATH environment variable. Watch that capitalization, and notice the ".;" in front.   Need CLASSPATH help?  Google "Setting CLASSPATH", or see my instructions for setting the Path variable when installing the Java JDK.  In my instructions, everywhere I say "Path" just substitute "CLASSPATH".  If the CLASSPATH variable does not exist, then create it.
+4. Contact me!  I'd be happy to help, and I'll do my best to get back to you within the day.  dbahr@regis.edu
+
+Modifying the source code:
+1. I encourage and condone redistribution, improvements, and modification to the source code in accordance with the GNU general public license.  Dig in, and have fun!
+2. The source code and javadoc API are included and may be unpacked from the CA_Explorer.jar.
+3. The "userRules" folder, "userAnalyses" folder, "ca_properties.txt", and other folders in the installation should be moved to the same location as the source code.
+4. Alternatively, the jar file may be referenced (without unpacking the contents) from a Java development tool such as Eclipse.
+5. Please send me an email letting me know how you have used, adapted, borrowed, or learned from my code, even if it is a small snippet.  Your email is much appreciated, and in an academic environment it helps to justify the time I spend writing the code.
+
+
+FOR HELP:
+
+Feel free to contact me at dbahr@regis.edu.

@@ -1,0 +1,48 @@
+//ca_width=100
+//max rule number size in digits=30000
+//user_analysis_folder=userAnalyses
+//rewind steps=200
+//import simulation=
+//ca_height=100
+//rectangle_width=1
+//Number of parallel processors=1
+//rule_number=90
+//Radius=1
+//Random percent per state=
+//maximum_iterations=1000000000
+//display step=1
+//data_file_path=
+//display hyperlinks in separate browser=true
+//facade_is_on=false
+//rectangle_filled=false
+//save_data_file_path=
+//filled color=-16777114
+//standard deviation=5.0
+//ellipse_filled=false
+//delimiters=	
+//update_graphics_at_end=false
+//boundary type=0
+//user_rule_folder=userRules
+//lattice=one-dim (2 neighbor)
+//rectangle_height=1
+//Number of states=2
+//time delay=0
+//Random percent=100
+//ellipse_height=0
+//empty color=-4210689
+//initial state=random
+//DiffusionLimitedAggregation random=25
+//running average=1
+//image_file_path=
+//Color scheme=Default Rainbow
+//store min state history=false
+//lambda=0.5
+//rule=userRules.ExampleColorAverage
+//ellipse_width=1
+//save_data=false
+//
+//END PROPERTIES
+//
+//first generation stored: 0
+//last generation stored: 0
+203 238 165	169 77 74	229 138 255	89 163 163	47 208 12	92 235 118	53 77 72	21 78 152	60 138 163	159 148 67	93 103 225	144 103 86	60 199 49	140 68 18	225 92 227	57 116 173	83 236 24	141 137 236	28 23 18	159 131 23	112 77 52	216 178 176	183 1 150	146 93 42	83 247 198	141 151 243	245 119 49	200 165 219	238 245 238	186 19 16	157 187 36	244 169 194	205 103 244	233 198 106	203 220 242	119 107 187	165 225 253	130 208 173	7 19 143	221 249 40	116 147 149	182 96 112	211 199 157	192 26 70	70 87 155	187 66 154	241 245 205	236 169 98	185 168 177	134 162 101	215 118 132	90 97 121	194 14 182	80 71 210	113 53 93	94 122 50	166 31 8	187 192 251	222 128 122	8 234 197	45 201 136	2 35 89	234 112 6	67 192 170	180 52 79	81 46 124	53 220 51	206 251 110	92 6 134	35 75 77	42 232 207	41 244 34	124 125 215	19 179 171	47 221 54	62 121 123	144 103 145	244 21 123	174 207 29	212 128 254	21 163 217	185 16 130	131 60 131	102 34 176	172 100 222	198 82 169	152 77 67	144 245 230	128 74 27	8 60 221	173 172 92	124 222 76	209 158 47	177 177 9	217 150 62	85 1 227	40 252 72	189 239 238	85 126 156	154 190 200

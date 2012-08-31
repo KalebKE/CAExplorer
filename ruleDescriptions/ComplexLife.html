@@ -1,0 +1,45 @@
+<html>
+
+<head>
+<title>Complex Life</title>
+</head>
+
+<body>
+<p><b>Complex Life</b></p>
+<p>Amazingly <a href="Life.html">Life</a>-like behavior emerging from cells with complex (&quot;continuous&quot;) 
+values.&nbsp; Try starting from a random initial configuration and watch blinkers, gliders and 
+other symmetric and stable life-forms evolve.</p>
+<p>Each cell takes the average x of itself and its neighbors, then plugs x into the equation 
+y = m x<sup>2</sup> + b for some slope m and intercept b.&nbsp; Only the 
+fractional part of y is kept.  In other words, think of the complex number y in polar 
+coordinates.  The cell is assigned the same angle (complex arg), but only the fractional 
+part of the magnitude (complex modulus) is kept.  The result is a cell value that always 
+lies within the unit circle. </p>
+<p>
+Finally, the absolute value of the real component is used.  
+In other words, all cells get mapped to values in the positive real portion of the unit circle. This is 
+not strictly necessary, and similar life-like behavior is possible without the absolute value (for example, 
+at values m = 0.9 + 0.9i, and b = 0.312 + 1.0 i).  However, the absolute value gives more interesting gliders.</p>
+<p>Life-like behavior happens when the slope m = 0.9 + 0.9 i and the y-intercept
+ b = 0.39 + 0.98 i. The behavior is very sensitive to changes in these values.  Changes may 
+cause life to proliferate too rapidly or to die off to quickly. (Values may be adjusted in 
+the More Properties panel.)</p>
+<p>Note that this life-like behavior is only visible when cells are color-coded by their 
+rate of divergence from the Mandelbrot set (in other words, the standard color coding for 
+displaying Mandelbrot sets).  Dark colors are on the Mandelbrot set, and increasingly light 
+colors are diverging more rapidly from the set.  In other words, colors are derived from 
+the equation z = z<sup>2</sup> + c where z (the value of the cell) is iterated repeatedly. 
+If the value diverges, the cell is given a light (or empty) color.  If the value 
+converges, the cell is given a dark (or full) color.  The rate at which it diverges 
+determines shades in between -- the faster the divergence then the lighter the color, 
+and the slower the divergence then the darker the color. See the <a href="Fractal.html">Fractal</a> 
+rule for another example of this 
+coloring scheme.</p>
+<p> Note that if the cells are instead shaded by their complex modulus (distance from 
+the origin), then the display shows nothing but a blank screen. <b>There 
+is no one correct way to display a cellular automaton, and different displays may highlight 
+otherwise hidden information.</b> In this case, the Mandelbrot set reveals all.</p>
+<p>Invented by David Bahr.</p>
+</body>
+
+</html>

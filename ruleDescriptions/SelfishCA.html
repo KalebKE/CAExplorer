@@ -1,0 +1,44 @@
+<html>
+
+<head>
+<title>Mostly Selfish</title>
+</head>
+
+<body>
+<p>
+<b>Mostly Selfish.</b>
+</p>
+<p>
+The neighbors are used to determine what rule is applied to each cell. Each
+set of neighbors defines a rule number (a la Wolfram -- see the 
+<a href="WolframRuleNumber.html">Wolfram
+1-d Rule</a>). This rule number then dictates the cell's next value. CA that 
+use their neighbors to determine the applicable rule are called "selfish" CA.  
+</p>
+<p>
+In particular, this rule looks at the nearest neighbors and the cell
+(in between them) to get an integer value. For example, the neighbors and the
+cell might be 110, which is the number 6. Then starting from the neighbor on
+the far right, it moves left on the lattice that number of spaces. In other
+words, with 110, it moves left 6 spaces. If it tries to move further left
+than the number of neighbors, then it wraps around to the rightmost neighbor.
+So if the lattice is nearest neighbor, then 110 moves 6 spaces left but wraps
+around twice and ends on the 0. Whatever value it ends on is the new value of
+the cell.
+</p>
+<p>
+Other selfish CA have a lattice of length (width) 8 and a rule number 
+is constructed from the entire lattice.  Therefore, the rule changes once per 
+time step and applies to all cells.  I call this rule "mostly selfish" to distinguish 
+it from these length 8 selfish CA.
+</p>
+<p>
+For the nearest-neighbor lattice, this is the same as rule 168. The most
+interesting behavior is on a next-nearest neighbor lattice.
+</p>
+<p>
+Invented by David Bahr.
+</p>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<html>
+
+<head>
+<title>Sort Reals</title>
+</head>
+
+<body>
+<p><b>Sort Reals</b></p>
+<p>Sorts real numbers by swapping adjacent pairs that are out of order.  Sorts 
+until all numbers are in order from left to right. Because wrap-around 
+lattices have no fixed starting point, this rule does not allow swaps across 
+the boundary. The boundary then acts as a starting point for the sort. 
+</p>
+<p>
+Among other things, sorting is a problem in &quot;mass conservation&quot;. The 
+numbers that are in the list must not &quot;disappear&quot; over time. The Margolus 
+lattice is often used for problems in physics because it is particularly good at conserving 
+quantities like mass.  Likewise, this sorting algorithm uses a Margolus lattice to 
+&quot;conserve the numbers&quot;. See the one-dim (Margolus) lattice 
+tooltip for more details, but essentially, every pair of numbers is placed within a &quot;block&quot;. 
+Numbers within a block are swapped when out of order. 
+</p>
+<p>
+How fast is this sort?  Adjacent pair swapping algorithms are notoriously slow, typically O(N<sup>2</sup>). 
+However, CA run in parallel, swapping all blocks simultaneously.  Therefore, this algorithm runs 
+exceptionally fast! It is O(N). 
+</p>
+<p>
+To see the quick run time, select a 99% random initial state on a 200 by 200 lattice. 
+On the Controls tab, select the button labeled &quot;><sub>F</sub>&quot;. (This stops the CA after filling the screen.) 
+Notice that values migrate across the screen to their correct location, but they will always do so 
+within 200 time steps (the maximum time it takes to go all the way across the screen). In fact, running the 
+simulation many times will convince you that the average run time is somewhat shorter than O(N).  
+</p>
+<p>
+For more details on sorting algorithms and big-O growth rates like O(N), see my 
+<a href="http://academic.regis.edu/dbahr/GeneralPages/DataStructures.htm">Data Structures</a> notes.
+</p>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<html>
+
+<head>
+<title>Fractal No neighbor</title>
+</head>
+
+<body>
+<p>
+<b> Fractal No Neighbor.</b>
+</p>
+<p>
+Generates amazing Mandelbrot and Julia fractals from a CA that uses complex numbers as values for each cell.
+<p>
+Each cell in this simulation ignores its neighbors, and some would therefore argue that this isn't a cellular 
+automaton at all. Generally speaking, a CA is a function of the cell and its neighbors. At an extreme, that 
+can include functions which look only at the cell and ignores the neighbors altogether.  Certainly it is 
+not unusual for CA to ignore particular neighbors, or to ignore different neighbors at different time steps.  
+So ignoring all of the neighbors is just one end of the spectrum of possibilities. Considered in this light, 
+almost all iterative functions can be cast as CA. Just apply a function to the cell itself, over and over.  
+Is that reasonable?  Perhaps.  It's certainly extreme.  But it does point out the close relationship 
+between CA and fractals.  Many fractals, like the ones created by this rule, are just iterative applications 
+of functions on the complex plane.
+<p>
+This particular CA rule (which acts only on the cell) applies the function f(z) to the complex numbered cell value z.  
+The function f is "i sinh(z)" by default, but may be reset 
+in the "More Properties" window to other complex functions like f = i sin, (i+1) cos, i tan, (i+1) tanh, etc. 
+After a series of steps, the cell's value is just the iterative application of f, as f(f(f(f(...f(z)))). For example, 
+i sinh(i sinh(i sinh(i sinh(...z)))).  The result is stunningly beautiful fractals when viewed properly.
+<p>
+In fact, from a CA perspective, what is particularly interesting is not this rule but the way in which the cell's are viewed. 
+Each cell can be viewed as either the complex modulus (a shaded value that 
+depends on the distance from origin) or as a fractal.  Fractals are derived from 
+the equation z = z<sup>2</sup> + c where z (the value of the cell) is iterated repeatedly. 
+If the value diverges, the cell is given a light (or empty) color.  If the value 
+converges, the cell is given a dark (or full) color.  The rate at which it diverges 
+determines shades in between -- the faster the divergence then the lighter the color, 
+and the slower the divergence then the darker the color. 
+<p>
+The Mandelbrot set is derived when c is set to the initial value of the cell.  A 
+Julia set is derived when c is a fixed value for all cells.  For Julia sets, the 
+value of c may be set in the "More Properties" window. 
+<p>
+Clearly, a relatively simple CA can take fascinating shapes and patterns when
+viewed in a "different light" as a fractal.  In fact, that's the real lesson here.  
+<b>There 
+is no one correct way to display a cellular automaton, and different displays may highlight 
+otherwise hidden information.</b>
+</body>
+
+</html>

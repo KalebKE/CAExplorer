@@ -1,0 +1,170 @@
+<html>
+
+<head>
+<title>Ising Model</title>
+</head>
+
+<body>
+<p>
+<b>Ising Model</b>
+
+<p>
+
+
+
+A classic model of magnetization much beloved by physicists. Ising models are 
+usually implemented as Monte Carlo simulations, but the parallelizable cellular 
+automata versions can run much faster.&nbsp;
+
+
+<p>
+
+
+
+So what is it? It's a model of the way clusters of magnetism or &quot;magnetic 
+domains&quot; move around in an iron bar. A real iron bar is magnetic when all of 
+it's atoms are aligned, and the bar is not magnetic if all of its atoms are 
+pointing in random directions (for simplicity sake, I'm taking some liberties 
+with the real physics, but we aren't losing anything important). Now imagine 
+that every cell in our simulation represents a tiny atomic-sized magnet that 
+spins like a top and points either up or down. On a cellular automaton we can 
+visualize these as up and down arrows, 0's and 1's, or black and white cells. In 
+our simulation we will get a magnet if all or a majority of the atomic-sized 
+arrows are aligned in the same direction.<p>
+
+
+
+Now imagine that the top of each arrow is attached to each of its neighbors by 
+small springs. If two arrows (tiny magnets) are pointing in the same direction 
+(both up or both down), then the springs are close together and relaxed.&nbsp; 
+But if two magnets have opposite spin (one points up and the other points down), 
+then the spring is stretched and under tension. If the spring is under 
+tension, then it pulls and wants to relax and minimize energy. Therefore, the 
+spin of a cell will want to flip from up to down (or vice-versa) if this puts 
+the springs under less tension.
+
+
+<p>
+
+
+
+For example, suppose we have three cells arranged as 101 where the 0's point up 
+and the 1's point down. Then the middle cell will want to flip to a 1 because 
+this will minimize the tension on the spring (minimize energy). In other words, 
+at the next time step the cellular automaton will become 111. In another 
+example, we might have 110.&nbsp; In that case, the middle cell can't decide if 
+it should be a 1 or a 0. Neither situation will reduce energy because it is 
+always out of alignment with at least one of the neighboring cells. In any given 
+configuration we can add up all the neighbors that are &quot;out of alignment&quot; and 
+subtract the number of neighbors that are &quot;in alignment.&quot; This gives the change 
+in energy (&#916;E) that would result if we flipped the 
+spin of the cell.<p>
+
+
+
+The Ising model always attempts to minimize energy. So a cell will <i>always</i> 
+flip spins (change from a 0 to a 1 or vice versa) if this will reduce energy or 
+leave it the same. In other words, a flip happens when &#916;E 
+&lt;= 0. In any other situation, the cell <i>might-maybe-perhaps</i> flip. If the 
+increase in energy is small, then it's more likely to flip than if the increase 
+in energy is huge. To be more precise, the flips happen with a probability given 
+by an exponential Boltzmann distribution exp[-&#916;E]. 
+(See statistical mechanics texts to understand why it's an exponential 
+distribution.)<p>
+
+
+
+Now if we track the spins over time (i.e., the 0's and 1's in the cellular 
+automaton simulation), then we'll see that the spins tend to cluster together 
+because that minimizes energy. Over time, the clusters grow and shrink and 
+represent domains of magnetization. Cool!<p>
+
+
+
+But wait, there's more. Without going into too many details, we can add a few 
+important parameters.&nbsp; First, remember that springs come in a variety of 
+different stiffness (spring constants). Some springs are really hard to stretch, 
+and others are floppy and easy to stretch. We can add this parameter to the 
+model as a &quot;spin-spin interaction strength&quot; usually labeled J. This J is a 
+measure of the energy required to move two spins out of alignment. With stiff 
+springs (high J), it's really hard to move those spins out of alignment. When J 
+is positive we get standard ferromagnets where the spins prefer to remain 
+aligned. If we change J to a negative value, then we get anti-ferromagnets where 
+the spins try to arrange themselves into a checkerboard like pattern. Try it! In 
+the simulation, go to the More Properties panel and play with the slider that 
+adjusts J -- you can see the change in behavior from ferromagnet to 
+anti-ferromagnet.<p>
+
+
+
+We can also add temperature, T. If you take a magnet and put it under a blow 
+torch, the magnet heats up until it passes the Curie point and loses its 
+magnetism. This sudden change from magnet to non-magnet is called a phase 
+transition. In the model, temperature changes the Boltzmann distribution so that 
+it is exp[-&#916;E/(kT)] where k is the Boltzmann 
+constant. Notice the negative sign in -&#916;E? This puts 
+the exponential in the denominator and means that as T increases, the 
+probability of flipping gets higher and higher. Eventually at a high enough 
+temperature, the cells flip values randomly and all of the time -- the domains 
+of magnetization disappear. And at very low temperatures, the probability goes 
+to zero and the cells freeze into place -- they never flip.&nbsp; To get a 
+better feel for this, try it in the simulation. Go to the More Properties panel 
+and play with the slider that adjusts T.<p>
+
+
+
+Finally, we can also add an external magnetic field, B. This is like putting a 
+small bar magnet right next to your computer's hard drive -- zap! The bar magnet 
+makes all of the &quot;cells&quot; on your hard drive flip (and you have reset your hard 
+drive losing all of your data). In the model, the change in energy is adjusted 
+by the external magnetic field. Just add B to &#916;E. 
+This biases the flips. Again, you can try this in the simulation by going to the 
+More Properties panel and adjusting the slider for B.<p>
+
+
+
+Well, that's a pretty basic introduction, but hundreds of papers about the Ising 
+model are published every year, so there are many excellent references. I 
+suggest <a href="http://oscar.cacr.caltech.edu/Hrothgar/Ising/intro.html">
+this link</a> as a nice and easy 
+description that includes some of the mathematics at a basic level. Many more 
+details can be found in statistical mechanics texts.
+
+
+<p>
+
+
+
+By the way, writing code for a cellular automaton version of an Ising model has 
+a few wrinkles. Most importantly, because all cells are updated in parallel (at 
+the same time) we can inadvertently cause a non-physical oscillation. For 
+example, consider the scenario 1001. With wrap-around boundary conditions, each 
+cell sees that it has &#916;E = 0 and flips. The result is 
+0110. But at the next time step, it flips back, and then continues to oscillate 
+indefinitely. Oops. The problem is that the calculation of &#916;E 
+assumes that the neighbors remained unchanged at the next time step, but in the 
+model both the neighbors and the cells are updating at the same time. To prevent 
+this behavior, we use a von Neumman lattice (four nearest neighbors) and divide 
+the lattice into a checkerboard pattern. Then we only update half of the cells 
+at each time step. First we update the &quot;red&quot; checkerboard cells, and then at the 
+next time step we update the &quot;black&quot; checkerboard cells. This keeps neighbors 
+from overlapping and prevents the oscillation. For details on similar mechanical 
+details, I highly recommend reading <i>Cellular Automata Machines</i> by Tofoli 
+and Margolus, 1991, Chapter 17.<p>
+
+
+
+Finally, a phenomenological observation. Notice the <i>many</i> similarities in behavior 
+between Ising models and <a href="MajorityWins.html">Majority Wins</a> style rules. 
+In both, we see clustering into domains, phase changes, etc. For example, the use of temperature in the 
+<a href="ObesityModel.html">Obesity</a> rule (a modified majority wins rule) is 
+nearly identical with only slightly mathematical differences. As illustrated in 
+my
+<a href="http://academic.regis.edu/dbahr/GeneralPages/CellularAutomata/CA_part17_files/frame.htm">
+lecture notes</a>, the same type of statistical mechanical arguments apply to 
+both cellular automata.
+
+
+</body>
+
+</html>

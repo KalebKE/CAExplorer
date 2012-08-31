@@ -1,0 +1,37 @@
+<html>
+
+<head>
+<title>Chinese Dragon (Julia Tornado)</title>
+</head>
+
+<body> 
+<b>Chinese Dragon (Julia Tornado).</b>
+<p>
+A phantasmagorical fractal display that comes from a surprisingly boring CA. 
+The CA simply averages the complex number values of neighboring 
+cells.  But to create a display, the equation z = z<sup>2</sup> + c is 
+iterated repeatedly where c is the cell's value, and z is the 
+cell's position on the complex plane (each cell is assigned a 
+position on the complex plane that corresponds to it's lattice 
+position). If the value diverges, the cell is given a light (or 
+empty) color.  If the value converges, the cell is given a dark 
+(or full) color.  The rate at which it diverges determines shades 
+in between -- the faster the divergence then the lighter the color, 
+and the slower the divergence then the darker the color.
+<p>
+To add interest, a small complex number is added to the cells at 
+each generation.  The value cycles sinusoidally between 0.001+0.001i 
+and -0.001-0.001i every 400 generations. The net effect is that the 
+CA displays slightly different Julia sets at each generation.  The 
+equation z = z<sup>2</sup> + c produces a different Julia set for each value 
+of c. 
+<p>
+This CA is a wonderful example of how the display makes a huge 
+difference in interpretation.  In this case, the cell values are 
+interpreted as belonging to Julia sets.  <b>There 
+is no one correct way to display a cellular automaton, and different 
+displays may highlight otherwise hidden information.</b>
+
+</body>
+
+</html>

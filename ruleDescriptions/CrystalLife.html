@@ -1,0 +1,39 @@
+<html>
+
+<head>
+<title>Snowflake</title>
+</head>
+
+<body>
+<p>
+<b>Crystal Life</b><p>Beautiful growing crystals with gliders that are 
+reminiscent of <a href="Life.html">Life</a>. This is
+<a href="OuterTotalistic.html">Outer Totalistic</a> rule 435 with two states, 
+but the running average is set at 2 to prevent annoying blinking. (See
+<a href="EpilepticBlobs.html">Epileptic Blobs</a> for an explanation of the 
+blinking shown by so many Outer Totalistic rules.)</p>
+<p>Starting from symmetric initial states, this CA produces gorgeous crystals 
+that grow very slowly or stay at roughly the same size. The long-term behavior 
+has not been mapped, but the slow or negligible growth along with the appearance 
+of gliders suggests that this CA might be capable of universal computation. 
+Other two-dimensional CA capable of universal computation (like Life) do not 
+display unbounded growth. On the other hand, many of the the Outer Totalistic 
+rules that produce crystals do have unbounded growth (e.g., see
+<a href="Snowflake.html">Snow Flake</a>).</p>
+<p>Gliders can be created from an initial state given by
+<pre>
+00000
+00100
+00110
+00100
+00000
+</pre></p>
+<p><i>Why are there three colors</i> if there are only two states? The CA 
+defaults to a running average of 2 time steps (you can change this if you like).&nbsp;When averaging two values, a 0 and a 0 averages to a 0.&nbsp;A 1 and a 1 
+averages to a 1. And a 1 and a 0 averages to a 0.5.&nbsp;The 0.5 is the third 
+color.&nbsp;To see the simulation with the original two colors (two states), 
+just set the running average to 1.&nbsp;As emphasized in many rules, the manner 
+in which a CA is displayed can convey very different information.</p>
+</body>
+
+</html>

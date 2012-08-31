@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<title>Rule 102</title>
+</head>
+
+<body> 
+<b>Rule 30 (Random # Generator).</b>
+<p>
+A very simple one-dimensional 2-state rule that can be used to generate random 
+numbers.&nbsp; Every statistical test applied to this rule shows that it has 
+chaotic and random behavior.&nbsp; For example, random numbers could be constructed by 
+collecting a series of bits down the middle of the simulation as shown in red 
+below.&nbsp;
+<p>
+<img border="0" src="../images/Rule30RandomAnalysis.png" width="225" height="135"><p>
+The first time step gives a bit of 1 (the initial seed), the second time 
+step gives a bit of 1, the third time step gives a bit of 0, etc. Putting them 
+together from right to left, we get the sequence of bits 00111011 which is the number 
+59.&nbsp; Grabbing the 
+next 8 bits gives another number.&nbsp; This process can continue and will 
+generate a sequence of random numbers.&nbsp; To try this yourself, use the 
+Randomness Test analysis and place the red cursor on the center cell as shown 
+above.<p>
+For more information see the paper by Stephen Wolfram, 1986, &quot;Random Sequence 
+Generation by Cellular Automata&quot;, <i>Advances in Applied Mathematics</i>, vol. 
+7, pp. 123-169.<p>
+The &quot;30&quot; 
+comes from a cellular automata numbering scheme popularized by Stephen Wolfram.&nbsp; 
+For details, see <a href="WolframRuleNumber.html">Wolfram 1-d Rules</a>.&nbsp; 
+In essence, Rule 30 has the following mapping<ul>
+		<li>111 -&gt; <font color="#FF0000">0</font></li>
+		<li>110 -&gt; 0</li>
+		<li>101 -&gt; 0</li>
+		<li>100 -&gt; 1</li>
+		<li>011 -&gt; 1</li>
+		<li>010 -&gt; 1</li>
+		<li>001 -&gt; 1</li>
+		<li>000 -&gt; <font color="#00FFFF">0</font></li>
+		</ul>
+		<p>In other words, if the cell and its neighbors are 111, then at the 
+		next time step the cell will become a 0.&nbsp; If the cell and its 
+		neighbors are 110, then at the next time step the cell will become a 0.&nbsp; 
+		Etc.&nbsp; All total, this corresponds to the binary number
+		<font color="#FF0000">0</font>001111<font color="#00FFFF">0</font> which 
+		is the number 30 in decimal.</p>
+		<p>
+Curious about other rule numbers? You can specify any Wolfram rule number by selecting 
+and running the &quot;Wolfram 1-d Rule&quot; in the Rule tab.
+</body>
+
+</html>

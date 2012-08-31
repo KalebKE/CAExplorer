@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<title>House</title>
+</head>
+
+<body>
+<p>
+<b>House</b></p>
+<p>
+Creates houses! If you have looked at a lot of cellular automata (CA), this may seem very surprising.
+A common complaint is that all CA tend to look similar -- 
+upside-down triangles, spirals, symmetric snow-flakes, and other common patterns. But there is no 
+limit to the shapes that can be created with CA's. We 
+tend to see the same shapes, over and over, only because we restrict ourselves to small numbers of states 
+on lattices with small neighborhoods. And typically we focus on rules that encourage symmetry, 
+like <a href="OuterTotalistic.html">Outer Totalistic</a>.
+<p>
+By allowing large neighborhoods or a large number of states, we can create shapes like houses. 
+In this case, the rule uses 57 states on a standard square 8 neighbor (Moore) lattice. 
+Each cell looks at its neighbors and says "ok, if this particular state is above me, then I need to 
+turn into this other state."  So for example, the tip of the roof is state 56. The cell below and to the left
+sees that 56 and knows that it needs to become state 55; and the cell below and to the right of the 56 knows that it 
+needs to become state 54.  So really, there is no mystery.  We can draw any desired shape on a lattice, 
+and then consecutively number every pixel/cell on the shape.  Each of these numbers becomes a state.  
+Each cell/pixel looks at its neighbors and knows what its value should be in relation to the other cells.
+<p>
+If you look at the code, it is tedious but straightforward.
+<p>
+<pre>
+<code>
+	if(cell == 56)
+	{
+		return 56;
+	}
+	else if(neighbors[2] == 56)
+	{
+		return 55;
+	}
+	else if(neighbors[0] == 56)
+	{
+		return 54;
+	}
+	else if(neighbors[5] == 48)
+	{
+		return 53;
+	}
+	else if(...)
+	{
+		...
+	}
+	else
+	{
+		return 0;
+	}
+</code>
+</pre>
+<p>
+See? The new value of each cell depends only on its neighbors.
+<p>
+Invented by David Bahr.
+
+</body>
+</html>

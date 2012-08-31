@@ -1,0 +1,44 @@
+<html>
+
+<head>
+<title>Reversible</title>
+</head>
+
+<body>
+<p>
+<b>Reversible</b>
+<p>
+Rules that run the same both forwards and backwards.  These are 
+useful in physics because most fundamental laws operate the same 
+way both forward and backwards in time. 
+<p>
+In these simulations, a cell's current value depends on both the 
+previous generation, and the generation before that. And, because the 
+simulation is reversible, each generation has a unique previous state.&nbsp; 
+Most CA do not have unique previous states.
+<p>
+Reversible rules may be constructed in many ways. These reversible 
+rules are constructed from the corresponding <a href="WolframRuleNumber.html">Wolfram 1-d Rules</a>, but 
+with one major change.&nbsp; The cell's new value is XORed with the cell's value from two generations back 
+(in other words, the new color should be inverted whenever the cell was 
+black two generations back). 
+<p>
+Intuitively, the cell's rules are symmetric when turned upside down. 
+For example, in one-dimension: if the cell is 1 two generation back, 
+and the cell and its neighbors are 111 in the previous generation, 
+then this might be mapped to a 0.  In that case, the upside down rule 
+would be 0 and 111 maps to 1.  Visually, 
+<pre>
+    1                                            0  
+if 111 is a rule, then this must also be a rule 111.
+    0                                            1  
+</pre>
+Although derived from the <a href="WolframRuleNumber.html">Wolfram 1-d Rules</a>, the patterns can be strikingly 
+different. Wolfram Rules tend to have triangles oriented up and down, 
+while these rules have triangles on their sides. These rules also create 
+interesting checkerboards and other mesmerizing patterns.
+As examples, try rules 18 and 90, with blank initial states. Draw 
+a random pattern on the second row, and run. 
+</body>
+
+</html>

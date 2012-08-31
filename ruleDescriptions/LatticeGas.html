@@ -1,0 +1,52 @@
+<html>
+
+<html>
+
+<head>
+<title>Lattice Gas (Fluid Flow)</title>
+</head>
+
+<body>
+<p>
+<b>Lattice Gas (Fluid Flow)</b>
+</p>
+<p>
+A Lattice Gas Automaton, or LGA, is used to model fluid flow and diffusion. Particles 
+travel along lattice lines and collide at nodes. The collisions follow 
+rules that obey mass and momentum conservation. This particular LGA is 
+frequently called an "FHP lattice gas" after Frisch, Hasslacher, and Pomeau who showed that 
+it reproduces the Navier-Stokes equations that describe fluid flow.
+<p>
+How's it work? Each cell holds a collection of "water" particles in a vector (or array) of 
+length 6. Each element of the vector is a 0 or a 1.  A 1 indicates 
+the presence of a particle.  Each index of the vector indicates 
+the neighbor towards which the particle is moving.  For example, 
+if a cell has value [1, 1, 0, 0, 0, 1], then it has three particles which are 
+moving towards neighbors 1, 3, and 6.  The CA rule
+consists of two steps: (1) translation to neighboring nodes, and (2) collision.
+Translation just transfers the particles to their neighboring nodes; and subsequently, 
+if more than one particle arrives at the same node, then they collide. Collisions are just 
+a rearrangement of the particles so that the 1's change their indices in the vector. 
+For example, if three particles arrived at a node as [1, 0, 1, 0, 1, 0], then a 
+collision might move them around to become [0, 1, 0, 1, 0, 1].&nbsp; Most importantly, the collisions are designed so that there is no change in mass and no 
+change in momentum (inviolate conservation laws from physics). For more details on LGA 
+and their rules, see my class notes on 
+<a href="http://academic.regis.edu/dbahr/GeneralPages/CellularAutomata/CA_part16_files/frame.htm">LGA</a> 
+or see one of the many other online references.
+<p>
+Note that the graphics do not show individual particle 
+vectors, but instead show the vector sum of all particles that 
+share a node.  For example, if two particles originate from the 
+same node but are traveling in opposite directions, then their 
+vector sum is zero, and nothing will be displayed. Vectors that 
+cancel each other's contributions occur frequently.  However, 
+sparsely populated grids will (in general) show the movement of 
+distinct particles because there are fewer particles sharing 
+nodes. 
+<p>
+<b>Fluid flow is best seen by keeping a running average of the 
+particle's vectors over time (set on the Properties panel).</b> 
+</p>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<html>
+
+<head>
+<title>Drunk Gliders</title>
+</head>
+
+<body>
+<p>
+<b>Drunk Gliders</b>
+<p>
+This produces stunning, drunk gliders in a simulation which is 
+identical to <a href="Spirals.html">Spirals</a>, but restricted to a 
+hexagonal lattice.</p>
+<p>
+The rule specifies that a cell has 5 states.  A cell in the 0 state 
+is converted to a 1 state if there are two, three, or four neighbors in the 
+1 state. A cell stays in the 1 state if there are exactly 2 neighbors that 
+are also in the 1 state.  If a cell is in the 1 state, but does not have 
+exactly 2 neighbors in the 1 state, then the cell slowly begins to die.  At 
+each time step the cell's value is incremented until it reaches 4, and then 
+at the next time step the cell dies and is converted to a 0. 
+<p>This CA is closely aligned with the birth/death process of the
+<a href="Life.html">Game of Life</a>.</p>
+</body>
+
+</html>

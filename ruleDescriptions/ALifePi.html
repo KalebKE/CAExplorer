@@ -1,0 +1,37 @@
+<html>
+
+<head>
+<title>Genetic Algorithm, &#960</title>
+</head>
+
+<body>
+<p>
+<b>Genetic Algorithm, &#960</b></p>
+<p>
+Uses a genetic algorithm to solve for &#960. Each cell holds a phenotype that contains a chromosome. 
+The chromosome represents an estimate of
+&#960 (as a binary number). At each time step, the
+cell and its neighbors are treated as a population of phenotypes
+that can breed and produce children. In particular, two phenotypes
+are selected based on their fitness. They have higher fitness and
+are more likely to be selected if they better approximate
+&#960. Once
+two chromosomes are picked (from among the cell and its neighbors)
+then they produce an offspring by crossover and mutation. This
+offspring is the cell's new value.
+</p><p>
+Better values of &#960 are shown in the occupied color, worse values in
+the empty color (gradations in color are in between). High contrast colors work 
+best. I suggest red values for empty sites (poor fitness) and blue values for 
+filled sites (good fitness). Averages of 5 time steps show the evolution quite 
+nicely.<p>
+Try starting with a blank initial configuration (these are chromosomes
+that are all 0's) and then draw in some chromosomes (they will have
+random values).  The drawn in area will grow and expand because it has
+better values.  Mutation will also make some of the blank spots (poor
+chromosomes) switch to better values.  Occasionally these will grow.
+<p>
+<b> This simulation is memory intensive, so 50 by 50 grids in two
+dimensions or 250 by 250 in one dimension are reasonable maximums.</b>
+</body>
+</html>

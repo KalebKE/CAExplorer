@@ -1,0 +1,31 @@
+<html>
+
+<head>
+<title>Particle and Wire Network</title>
+</head>
+
+<body>
+<p>
+<b>Particle and Wire Network</b>
+<p>
+Allows particles to travel along a network, like electrons along a wire. Each 
+cell is a wire, a particle with a weight, or a blank. An arrow indicates the 
+direction that a particle is traveling or (in the case of wires) the direction 
+that a particle is allowed to travel (so technically the wires behave as 
+diodes). If two particles move into the same site, then their integer weights 
+are combined (up to a maximum of 12).
+<p>
+A special "fanout" wire has no inherent direction and will disperse particles 
+in all directions.  Each direction gets a particle with the same weight (whatever 
+weight was held by the particle in the "fanout").  Note: this will increase the 
+total weight of the particles in the simulation.
+<p>
+This rule was written primarily for developers that want an example with 
+arbitrary graphics for each cell, and as a test of the computational capabilities 
+of dendritic systems.  See the "Network computation" analysis (and research on 
+glacier computations and
+<a href="http://academic.regis.edu/dbahr/GeneralPages/Research/MogulResearch.htm">
+ski mogul computations</a> by David Bahr).
+</body>
+
+</html>

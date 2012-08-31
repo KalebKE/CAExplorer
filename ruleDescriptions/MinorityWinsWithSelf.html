@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<title>Minority Wins (with self)</title>
+</head>
+
+<body>
+<p>
+<b>Minority Wins (with self)</b>
+
+<p>Very similar to <a href="MinorityWins.html">Minority Wins</a>, but in this case the cell itself is included in the
+calculation. This is a rebellious model of decision making where a person
+always chooses to go with the minority opinion (their own opinion is included
+in the count). For example, a cell (or person) will decide to join a particular
+political party only if that party is in the minority among their neighbors. If
+two neighbors are colored blue, six neighbors are colored red, and the cell
+itself is red, then the cell will decide to join the minority blue party. In
+other words the cell will turn blue. (If there is a tie, the party is picked
+randomly.) </p>
+
+<p>This simulation will flip-flop annoyingly as if the cells can never make up
+their mind. While hurtful to the eye, this is&nbsp; the way birds behave when
+standing on the ground in a big flock.&nbsp; Each birds is always changing its
+mind about whether or not they should eat or watch for predators. If all their
+neighboring birds in the flock are watching for predators (like hawks), then
+they will eat. And if all the neighboring birds are eating, then they will
+decide to watch out for predators because nobody else is watching out for
+them.&nbsp; For more information try reading &quot;Bahr, D. B. and M. <span
+class=SpellE>Bekoff</span>. 1999. Predicting Flock Vigilance From Simple
+Passerine Interactions: <span class=SpellE>Modelling</span> with Cellular
+Automata. <i>Animal <span class=SpellE>Behaviour</span></i>, 58, 831-839.&quot;</p>
+
+<p>This rule is very similar to <a href="MajorityWinsWithSelf.html">Majority
+Wins (with self)</a>, but the cell chooses the minority rather than the
+majority. Understanding this CA will probably be easier after studying the
+Majority Wins (with self) CA.</p>
+
+<p>Simulations with this rule will very quickly come to a steady state with
+obvious clusters of opinion.&nbsp; This simulation is not as interesting as the
+strict <a href="MinorityWins.html">Minority Wins</a> rule which excludes the
+opinion of the cell from the decision making.&nbsp; In that case, the cell is
+entirely influenced by its neighbors, and its own opinion matters not at
+all.&nbsp; <span style='color:red'>Simulations with the Minority Wins rule have
+more dynamic boundaries than this rule </span>(where the cell cannot quite make
+up its mind).</p>
+
+<p>To avoid a headache when using two-dimensional grids, try averaging 2 time
+steps. </p>
+
+</body>
+
+</html>

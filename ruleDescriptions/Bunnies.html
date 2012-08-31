@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<title>Bunnies</title>
+</head>
+
+<body>
+<p>
+<b>Bunnies</b></p>
+<p>
+Creates rabbits! If you have looked at a lot of cellular automata (CA), this may seem very surprising.
+A common complaint is that all CA tend to look similar -- 
+upside-down triangles, spirals, symmetric snow-flakes, and other common patterns. But there is no 
+limit to the shapes that can be created with CA's. We 
+tend to see the same shapes, over and over, only because we restrict ourselves to small numbers of states 
+on lattices with small neighborhoods. And typically we focus on rules that encourage symmetry, 
+like <a href="OuterTotalistic.html">Outer Totalistic</a>.
+<p>
+By allowing large neighborhoods or a large number of states, we can create shapes as unique 
+as rabbits. In this case, the rule uses 73 states on a standard square 8 neighbor (Moore) lattice. 
+Each cell looks at its neighbors and says "ok, if this particular state is above or beside me, then I need to 
+turn into this other state."  So for example, the tip of the bunny ear is state 72. The cell to the right 
+sees that 72 and knows that it needs to become state 71; and the cell below that 72 knows that it 
+needs to become state 70.  So really, there is no mystery.  We can draw any desired shape on a lattice, 
+and then consecutively number every pixel/cell on the shape.  Each of these numbers becomes a state.  
+Each cell/pixel looks at its neighbors and knows what its value should be in relation to the other cells.
+<p>
+If you look at the code, it is tedious but straightforward.
+<p>
+<pre>
+<code>
+	if(cell == 72)
+	{
+		return 72;
+	}
+	else if(neighbors[7] == 72)
+	{
+		return 71;
+	}
+	else if(neighbors[1] == 72 && neighbors[2] == 71)
+	{
+		return 70;
+	}
+	else if(neighbors[0] == 71)
+	{
+		return 69;
+	}
+	else if(...)
+	{
+		...
+	}
+	else
+	{
+		return 0;
+	}
+</code>
+</pre>
+<p>
+See? The new value of each cell depends only on its neighbors.
+<p>
+Invented by David Bahr.
+
+</body>
+</html>

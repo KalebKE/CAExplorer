@@ -1,0 +1,77 @@
+<html>
+
+<head>
+<title>Obesity</title>
+</head>
+
+<body>
+<p>
+<b>Obesity</b>
+<p>
+Simulates the evolution of an individual's body mass index (BMI) based on the BMI 
+of other members of your social network.  (The following gives a quick description 
+of the rule's behavior, but there is also a 
+<a href="http://academic.regis.edu/dbahr/GeneralPages/CellularAutomata/CA_Explorer/helpVersion5_0/CA_ObesityTour.html">
+brief and basic tutorial</a> on the mechanics of running the Obesity rule, geared towards folks studying obesity.)
+<p>
+Each state
+in the model represents a range of body mass index BMI. Generally, there are 4 states
+representing underweight (0), normal (1), overweight (2), and obese (3). In
+this model, each person (grid cell) looks at all of their friends (their social 
+network defined by the lattice) and is assigned a
+probability of taking a new state based on the percentage of their friends that
+have that state. The individual is included as a member of their own network.<p>
+For example, suppose an individual or a grid cell in the simulation has 8 
+friends. Then the probabilities of taking on states 0, 1, 2, or 3 are based on 
+the observed states of 9 individuals (8 friends plus the cell itself). If there are four 0's, two 1's, and three 4's,
+then the odds are 4/9 that the cell becomes a 0, 2/9 that the cell becomes a
+1, and 3/9 that the cell becomes a 4.
+ <p>
+There is no restriction to 4 categories of BMI. The number of states can 
+be increased or decreased to represent any number of categories of BMI. 
+Large numbers of states like 100 effectively represent a continuum.
+<p>
+This simulation is similar to &quot;<a href="MajorityProbablyWins.html">Majority 
+Probably Wins</a>&quot;, but includes many more parameters available in the More Properties panel.
+Additional parameters include temperature (social volatility), social forces, several types of noise, etc.
+<p>
+A manuscript detailing results from this model (and its variants) has been accepted and will be 
+published in the journal <i>Obesity</i> (<a href="http://www.nature.com/oby/index.html">http://www.nature.com/oby/index.html</a>). 
+The anticipated publication date is early 2009. The abstract is below.<p>
+
+<hr>
+<p>
+<b>Exploiting Social Networks to Mitigate the Obesity Epidemic</b>
+<p>
+David B. Bahr<sup>1</sup>, Raymond C. Browning<sup>2</sup>, Holly R. Wyatt<sup>2</sup>, 
+James O. Hill<sup>2</sup></p>
+<p><font size="1"><sup>1</sup>Department 
+of Physics and Computational Science, Regis University, Denver, CO 80221<br>
+<sup>2</sup>Center for Human Nutrition, 
+University of Colorado Denver Health Sciences Center, Denver, CO 80262</font></p>
+<p>Abstract:</p>
+<p>Despite significant efforts, obesity continues to be a 
+major public health problem, and there are surprisingly few effective strategies 
+for its prevention and treatment. We now realize that healthy diet and activity 
+patterns are difficult to maintain in the current physical environment. 
+Recently, it was suggested that the social environment also contributes to 
+obesity. Therefore, using network-based interaction models, we simulate how 
+obesity spreads along social networks and predict the effectiveness of 
+large-scale weight management interventions. For a wide variety of conditions 
+and networks, we show that individuals with similar BMIs will cluster together 
+into groups, and if left unchecked, current social forces will drive these 
+groups toward increasing obesity. Our simulations show that many traditional 
+weight management interventions fail because they target overweight and obese 
+individuals without consideration of their surrounding cluster and wider social 
+network. The popular strategy of dieting with friends is shown to be an 
+ineffective long-term weight-loss strategy, whereas dieting with friends of 
+friends can be somewhat more effective by forcing a shift in cluster 
+boundaries. Fortunately, our simulations also show that interventions targeting 
+well-connected and/or normal weight individuals at the edges of a cluster may 
+quickly halt the spread of obesity. Furthermore, by changing social forces and 
+altering the behavior of a small but random assortment of both obese and normal 
+weight individuals, highly effective network-driven strategies can reverse 
+current trends and return large segments of the population to a healthier 
+weight. </p>
+ </body>
+</html>

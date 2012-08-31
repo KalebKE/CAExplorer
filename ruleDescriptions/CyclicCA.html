@@ -1,0 +1,31 @@
+<html>
+
+<head>
+<title>Cyclic CA</title>
+</head>
+
+<body>
+<p>
+<b>Cyclic CA</b>
+<p>
+Cyclic CA produce spirals and squares that move in a variety of interesting 
+ways.  They are frequently used as simplistic models of wave-like behavior, 
+particularly "excitable media" which are waves that don't dampen or die away 
+over time.  Classic examples include forest fires, waves of people in a football 
+stadium, waves of electrical activity moving across the heart, and certain kinds 
+of chemical reactions.
+<p>
+Each cell can only update its state from n to n+1 (modulo N) where N is the number 
+of states. In other words, each cell cycles through all possible values.  For 
+example, if the the CA has 4 states and the cell is initially in state 0, then 
+the cell will perpetually cycle through the values 0, 1, 2, 3, 0, 1, 2, 3, ... 
+<p>
+Most importantly, a cell only increments its current state (n) if there are M or 
+more neighbors with the next state (n+1).  M is called the trigger number.  <b>The 
+trigger number can be set in the "More Properties" panel</b> (it has a default 
+value of 3).
+<p>
+Cyclic CA such as these were explored and popularized by David Griffeath.
+</p>
+</body>
+</html>

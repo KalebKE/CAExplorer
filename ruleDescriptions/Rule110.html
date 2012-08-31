@@ -1,0 +1,57 @@
+<html>
+
+<head>
+<title>Rule 102</title>
+</head>
+
+<body> 
+<b>Rule 110.</b>
+<p>
+A very simple one-dimensional 2-state rule that has been proven capable of 
+universal computation by Matthew Cook. In other words, this ridiculously simple 
+rule is capable of calculating anything that can be computed by the world's most 
+powerful supercomputers. Intuitively, you can see information being transmitted 
+by &quot;spaceships&quot; (or gliders) of various speeds which collide and produce other 
+spaceships in a manner analogous to electrons moving through logic gates. The 
+logic gates could be used to build a computer. However, the actual proof 
+converts the CA to a &quot;cyclic tag system&quot; which is known to be equivalent to a 
+Universal Turing Machine.<p>
+What are some of the spaceships that &quot;transmit&quot; information? Look for patterns 
+of triangles that meander through the background pattern. The ever-present 
+background pattern is a repeating ...00010011011111... This pattern cycles back 
+to the initial value every 7 time steps. Spaceships move through this 
+background. For example,<ul>
+	<li>Spaceship 1: 111 surrounded by the above background. Moves straight 
+	downwards and repeats every 6 time steps.</li>
+	<li>Spaceship 2: 1001111 surrounded by the above background. Moves left and 
+	repeats every 30 time steps.</li>
+	<li>Spaceship 3: 0001110111 surrounded by the above background. Moves right 
+	and repeats every 3 time steps.</li>
+	<li>Spaceship n: There are many others.</li>
+	</ul>
+	<p>
+The &quot;110&quot; 
+comes from a cellular automata numbering scheme popularized by Stephen Wolfram.&nbsp; 
+For details, see <a href="WolframRuleNumber.html">Wolfram 1-d Rules</a>.&nbsp; 
+In essence, Rule 110 has the following mapping<ul>
+		<li>111 -&gt; <font color="#FF0000">0</font></li>
+		<li>110 -&gt; 1</li>
+		<li>101 -&gt; 1</li>
+		<li>100 -&gt; 0</li>
+		<li>011 -&gt; 1</li>
+		<li>010 -&gt; 1</li>
+		<li>001 -&gt; 1</li>
+		<li>000 -&gt; <font color="#00FFFF">0</font></li>
+		</ul>
+		<p>In other words, if the cell and its neighbors are 111, then at the 
+		next time step the cell will become a 0.&nbsp; If the cell and its 
+		neighbors are 110, then at the next time step the cell will become a 1.&nbsp; 
+		Etc.&nbsp; All total, this corresponds to the binary number
+		<font color="#FF0000">0</font>110111<font color="#00FFFF">0</font> which 
+		is the number 110 in decimal.</p>
+		<p>
+Curious about other rule numbers? You can specify any Wolfram rule number by selecting 
+and running the &quot;Wolfram 1-d Rule&quot; in the Rule tab.
+</body>
+
+</html>

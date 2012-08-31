@@ -1,0 +1,37 @@
+<html>
+
+<head>
+<title>Chutes, Ladders, and Shifts</title>
+</head>
+
+<body>
+<p>
+<b>Chutes, Ladders, and Shifts.</b>
+</p>
+<p>
+A rule which produces chutes, ladders, ray guns, and a wide variety of other behaviors depending on the number of states.  For some of the best ladders, choose a square (8-neighbor) 100 by 100 lattice with 35 states and a 50% random initial state. Run this simulation for 600 or more time steps to see ever changing chutes and ladders. Other choices for the number of states look like Majority Probably Wins, simple translations, or premature death.  In one-dimension, the rule produces complex streams of colliding data that usually end in Class II cycles.
+</p>
+<p>
+How's the rule work?  The neighbors (including the cell itself) are concatenated into a single value.  This value is converted to a base 10 integer. The neighbor that corresponds to that integer (modulo the number of neighbors) is selected as the cell's new value. 
+</p>
+<p>
+For example, in one dimension with nearest neighbors and two states (0 and 1), the cell may have value 0 and the left and right neighbors may each have values 1.  These concatenate to 101 in base 2, which is the integer 5 in base 10.  There are three neighbors (including the cell itself) which can be numbered 0, 1, and 2.  Because 5 mod 3 = 2, the 2nd neighbor is selected.  The 2nd neighbor is the right neighbor which has value 1.  Therefore, the cell's new value will be 1.
+</p>
+<p>
+In two dimensions, the cells are numbered clockwise starting at the upper left (see the tooltip descriptions of the lattices).  However, as in the one-dimensional example above, the cell itself is inserted into the middle of the neighbors.  For example, on a square (8 neighbor) lattice, the neighbors are numbered as 
+<pre>
+         012
+         7x3
+         654
+</pre>
+with the cell x in the middle.  When concatenated the cells are arranged as 0123x4567.  In the one-dimensional nearest-neighbor lattice, the neighbors are arranged as 0x1 and when concatenated, they are still arranged as 0x1.  For obvious reasons, this rule is "more natural" on one-dimensional lattices.
+</p>
+<p>
+This rule is very similar to Tunnelling Spaceships.  When concatenating, the cell itself is not included in this rule, but it is included in Tunnelling Spaceships.
+</p>
+<p>
+Invented by David Bahr.
+</p>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<html>
+
+<head>
+<title>Young Versus Old Diamonds</title>
+</head>
+
+<body>
+<p>
+<b>Young Versus Old Diamonds</b>
+<p>
+Generates ever-changing beautifully colored diamonds that grow from small seeds.
+<p>
+Similar to <a href="Life.html">Life</a> and <a href="CyclicCA.html">Cyclic CA</a>, each cell is born, survives, or dies.
+The births and deaths depend on the number of neighbors that 
+have a larger value than the cell (younger) and the 
+number of neighbors that have a smaller value than the cell (older). 
+<p>
+A cell is &quot;born&quot; if it is currently unoccupied (has value 0) and if there are two or 
+more neighbors that are greater than 0. It is born with a value one 
+higher than the highest valued neighbor.
+For example, consider a cell with 8 neighbors as shown.
+<pre>
+     653
+     305
+     000
+</pre>
+The cell in the middle will be "born" at the next time step with a value 
+of 7 because 6 is the largest value in the neighborhood.
+On the other hand, 
+<pre>
+     008
+     000
+     000
+</pre>
+will not birth because there is only one neighbor greater than 0 (at least two are needed). 
+Likewise
+<pre>
+     653
+     325
+     000
+</pre>
+will not birth because the middle cell is not a 0.
+<p>
+A cell will "die" if the number of older neighbors is greater than the number of younger 
+neighbors. The cell itself is included as a younger neighbor, 
+and neighbors with value 0 are not counted as either younger or older).
+<p>
+This rule was invented by Alby Graham (and this description was edited by David Bahr to whom mistakes should be credited :-).
+</body>
+</html>

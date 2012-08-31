@@ -1,0 +1,48 @@
+//ca_width=300
+//max rule number size in digits=30000
+//user_analysis_folder=userAnalyses
+//rewind steps=434
+//import simulation=
+//ca_height=300
+//rectangle_width=14
+//Number of parallel processors=1
+//rule_number=110
+//Radius=1
+//Random percent per state=
+//maximum_iterations=1000000000
+//display step=1
+//data_file_path=
+//display hyperlinks in separate browser=true
+//facade_is_on=true
+//rectangle_filled=true
+//save_data_file_path=
+//filled color=-16777114
+//standard deviation=5.0
+//ellipse_filled=true
+//delimiters=	
+//update_graphics_at_end=false
+//boundary type=0
+//user_rule_folder=userRules
+//lattice=one-dim (2 neighbor)
+//rectangle_height=1
+//Number of states=2
+//time delay=0
+//Random percent=10
+//ellipse_height=0
+//empty color=-4210689
+//initial state=random
+//DiffusionLimitedAggregation random=25
+//store min state history=false
+//Color scheme=Default Rainbow
+//image_file_path=
+//running average=1
+//lambda=0.5
+//ellipse_width=25
+//rule=cellularAutomata.rules.Rule110
+//save_data=false
+//
+//END PROPERTIES
+//
+//first generation stored: 0
+//last generation stored: 0
+0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	1	0	0	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	1	0	0	0	0	0	1	0	1	0	1	0	0	1	0	0	1	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	1	1	0	1	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	1	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0

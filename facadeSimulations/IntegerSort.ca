@@ -1,0 +1,48 @@
+//ca_width=200
+//max rule number size in digits=30000
+//user_analysis_folder=userAnalyses
+//rewind steps=400
+//import simulation=
+//ca_height=200
+//rectangle_width=1
+//Number of parallel processors=1
+//rule_number=90
+//Radius=1
+//Random percent per state=
+//maximum_iterations=1000000000
+//display step=1
+//data_file_path=
+//display hyperlinks in separate browser=true
+//facade_is_on=true
+//rectangle_filled=false
+//save_data_file_path=
+//filled color=-16777114
+//standard deviation=5.0
+//ellipse_filled=false
+//delimiters=	
+//update_graphics_at_end=false
+//boundary type=0
+//user_rule_folder=userRules
+//lattice=one-dim (Margolus)
+//rectangle_height=1
+//Number of states=200
+//time delay=0
+//Random percent=99
+//ellipse_height=0
+//empty color=-4210689
+//initial state=random
+//DiffusionLimitedAggregation random=25
+//running average=1
+//image_file_path=
+//Color scheme=Default Rainbow
+//store min state history=false
+//lambda=0.5
+//rule=cellularAutomata.rules.IntegerSort
+//ellipse_width=25
+//save_data=false
+//
+//END PROPERTIES
+//
+//first generation stored: 0
+//last generation stored: 0
+134	89	105	47	29	192	141	128	127	81	27	184	24	11	63	94	68	151	119	102	79	113	16	94	142	16	27	106	138	53	47	182	27	177	172	84	66	179	172	182	118	98	118	176	110	50	43	137	99	109	156	168	41	163	115	118	162	167	95	108	195	2	139	9	133	154	100	66	157	48	31	173	107	174	42	92	195	18	1	183	101	116	48	170	168	79	51	164	33	103	5	143	52	188	167	99	28	34	21	137	155	137	169	80	163	194	65	61	150	118	96	167	195	113	0	70	168	51	177	76	65	15	56	7	39	128	144	197	88	157	93	110	182	106	129	55	8	41	106	105	177	104	82	46	114	77	76	35	106	101	132	59	0	35	116	166	162	16	74	8	71	144	104	125	72	183	105	81	136	22	122	159	143	73	181	143	56	39	125	168	4	146	158	147	110	27	19	79	166	17	63	180	118	33	51	58	198	11	185	93

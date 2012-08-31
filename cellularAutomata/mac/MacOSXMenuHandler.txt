@@ -1,0 +1,87 @@
+/*
+ MacOSXMenuHandler -- a class within the Cellular Automaton Explorer. 
+ Copyright (C) 2007  David B. Bahr (http://academic.regis.edu/dbahr/)
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License
+ as published by the Free Software Foundation; either version 2
+ of the License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+package cellularAutomata.mac;
+
+import cellularAutomata.CAShutDown;
+import cellularAutomata.CAController;
+import cellularAutomata.graphics.AboutDialog;
+
+import com.apple.eawt.*;
+
+// NOTE: IF YOU ARE WORKING ON A MAC, YOU CAN USE THIS CLASS. CHANGE THE
+// EXTENSION FROM ".txt" TO .java".
+//
+// IF YOU ARE WORKING ON A pc THEN THIS CLASS WILL CAUSE ECLIPSE TO THROW ERRORS
+// BECAUSE THE com.apple.eawt.*; PACKAGE WILL BE MISSING. ON A pc, JUST USE THE
+// ASSOCIATED ".class" FILE. (I.E., MAKE CHANGES TO THIS CLASS ON A mac AND COPY
+// THE NEW ."class" FILE INTO THE cellularAutomata.mac FOLDER/PACKAGE ON THE
+// pc.)
+
+/**
+ * An annoying necessity for dealing with the Mac's "About" and "Quit" menu
+ * items.
+ * 
+ * @author David Bahr
+ */
+public class MacOSXMenuHandler extends Application
+{
+	/**
+	 * Create a handler for Mac menu items.
+	 */
+	public MacOSXMenuHandler()
+	{
+		addApplicationListener(new MacHandlerListener());
+	}
+
+	/**
+	 * A Mac listener for dealing with the Mac's "About" and "Quit" menu items.
+	 * 
+	 * @author David Bahr
+	 */
+	private class MacHandlerListener extends ApplicationAdapter
+	{
+		/**
+		 * Create a Mac listener.
+		 */
+		public MacHandlerListener()
+		{
+		}
+
+		/**
+		 * Override default behavior to call my About dialog instead.
+		 */
+		public void handleAbout(ApplicationEvent event)
+		{
+			AboutDialog.showAboutDialog(CAController.getCAFrame());
+
+			// If this is not set, then the Mac still pops up its own About
+			// window (annoyingly non-standard behavior).
+			event.setHandled(true);
+		}
+
+		/**
+		 * Override default behavior to call my Exit dialog instead.
+		 */
+		public void handleQuit(ApplicationEvent event)
+		{
+			CAShutDown.exit(CAController.getCAFrame());
+		}
+	}
+}

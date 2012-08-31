@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<title>3x+1</title>
+</head>
+
+<body>
+<p>
+<b>3x+1.</b>
+<p>
+This CA illustrates some of the fractal structures inherent to the 3x+1 problem 
+(and its generalizations).
+<p>
+The "3x+1" recursion tracks the progress of a single number x when a function f 
+is applied to x repeatedly. For example f(f(f(f...(f(x))))). Many 
+functions have interesting behaviors, but the 3x+1 recursion refers to the particular 
+compound function f(x) = 3x+1 for odd 
+numbers and f(x) = x/2 for even numbers. 
+<p>
+The surprisingly deep and unsolved "3x+1 problem" asks 
+whether or not every non-zero number eventually falls into the trivial 
+cycle of 4, 2, 1. For example, the number 13 would generate the sequence 
+13, 40, 20, 10, 5, 16, 8, 4, 2, 1 and would then repeat 4, 2, 1 indefinitely.
+<p>
+In reference 
+to the 3x+1 problem, mathematician Paul Erdos said "Mathematics is not yet ready for such problems." 
+Perhaps Erdos is right. John Conway, of "<a href="Life.html">The Game of Life</a>" fame, proved that a generalization of the 
+3x+1 problem is formally undecidable.&nbsp; That's computer science jargon for: "I 
+can <b>prove</b> it is unsolvable unless <i>maybe</i> you have infinite time to 
+work on it."&nbsp; Cool.
+<p>
+This simulation generalizes the original 3x+1 problem to consider numbers 
+modulo N where N is the number of states. (That's roughly the same 
+generalization made by Conway.)&nbsp;  It also assumes that the number 
+x is the average of the values in the cell and its neighbors (decimal 
+averages are always rounded up). 
+<p>
+In this simulation, the smallest and largest values are assigned a color, 
+and all other values are assigned a shading that falls proportionally 
+in between. 
+<p>
+Fractal patterns are obvious when the simulation is started from a single 
+seed. 
+<p>
+This CA was invented by David Bahr. 
+</body>
+
+</html>

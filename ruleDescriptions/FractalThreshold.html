@@ -1,0 +1,41 @@
+<html>
+
+<head>
+<title>Fractal Threshold</title>
+</head>
+
+<body>
+<p>
+<b> Fractal Threshold.</b>
+</p>
+<p>
+Generates a steady-state fractal pattern from complex-valued cells.
+<p>
+This rule is takes the sum of the neighbors and subtracts the value of the cell.  If the modulus of 
+this value is less than a threshold value of 10, then the cell is multiplied by 1.0 - i.  If the modulus 
+of this value exceeds the modulus of the " full or maximum state" (5+5i), then it is set to 0+0i. Finally the 
+resulting value "a" is transformed by a complex function f(a).  
+The function f is "i tan(a)" by default, but may be reset 
+in the "More Properties" window to other complex functions like f = i sin, (i+1) cos, i sinh, (i+1) tanh, etc. 
+<p>
+What is interesting is not the rule but the way in which the cell's are viewed. 
+Each cell can be viewed as either the complex modulus (a shaded value that 
+depends on the distance from origin) or as a fractal.  Fractals are derived from 
+the equation z = z<sup>2</sup> + c where z (the value of the cell) is iterated repeatedly. 
+If the value diverges, the cell is given a light (or empty) color.  If the value 
+converges, the cell is given a dark (or full) color.  The rate at which it diverges 
+determines shades in between -- the faster the divergence then the lighter the color, 
+and the slower the divergence then the darker the color. 
+<p>
+The Mandelbrot set is derived when c is set to the initial value of the cell.  A 
+Julia set is derived when c is a fixed value for all cells.  For Julia sets, the 
+value of c may be set in the "More Properties" window. 
+<p>
+Clearly, a CA can have unique and unusual shapes and patterns when
+viewed in a "different light" as a fractal.  In fact, that's the real lesson here.  
+<b>There 
+is no one correct way to display a cellular automaton, and different displays may highlight 
+otherwise hidden information.</b>
+</body>
+
+</html>

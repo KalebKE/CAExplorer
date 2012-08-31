@@ -1,0 +1,51 @@
+<html>
+
+<head>
+<title>Moving Fractal</title>
+</head>
+
+<body>
+<p>
+<b>Moving Fractal</b>
+</p>
+<p>
+This simulation requires <b>lots</b> of memory and a fast processor, but will evolve 
+into the shape of a fractal such as the Mandelbrot set or a Julia set. In EZ mode, it 
+won't look like much. For a better display, you will need to set the lattice size much 
+larger, but only do this if you a have at least 3GB memory (might crash otherwise).
+<p>
+Each cell is a vector of complex numbers, with each number "pointing" at a 
+particular neighbor.  For example, the 1st element of the vector points at the 1st 
+neighbor, the 2nd element points at the second neighbor, etc.  At each time step, 
+the numbers move from the cell to their respective neighbors, just like the translation 
+step of a lattice gas (see the hexagonal <a href="LatticeGas.html">lattice gas rule</a>).  
+After translating, 
+each cell holds new complex numbers (vector elements). These complex numbers are 
+reoriented so that the element with the largest real value points to the right, the 
+smallest real value points to the left, the largest imaginary value points up, and the 
+smallest imaginary value points down.  Effectively, this is a lattice gas simulation 
+with multiple forces and no collisions (conservation of mass, but not momentum). 
+Any element that translates into a wall "bounces back" in the opposite direction. 
+<p>
+The default view shows the complex modulus (distance from the origin) of the average 
+of the elements in the vector.  Darker colors are complex numbers that are farther 
+from the origin.  Effectively, the complex numbers migrate to their appropriate 
+relative positions on the complex plane, piling up against any walls that are in 
+the way. With walls around the edges, the view is darker along the outside because 
+the larger numbers migrate outwards and pile against the walls.  The distance at the 
+walls is greatest from the origin at the center, so these numbers are darker colors. 
+<p>
+More interestingly, if the Julia or Mandelbrot view is selected, then the particles 
+slowly arrange themselves as fractals.  This will take time and a large simulation. 
+The fractal views shade each cell by the amount of time it takes the iterative 
+equation z = z<sup>2</sup> + c to diverge where z is the value of the cell.  For Julia sets, c is 
+set to a fixed value.  For the Mandelbrot set, c is the initial value of the cell. 
+<p>
+As with the <a href="Fractal.html">Fractal rule</a>, <b>this simulation illustrates the 
+importance of choosing an 
+appropriate view for the cell states</b>.  Different views (like the Julia set) can lead 
+to radically different interpretations of the same CA rule. To help interpret the 
+results, first try the Fractal rule and compare the shapes from that rule to the 
+shapes produced by this rule. (Set the center of the Fractal rule at 0+0i with width 3.)  
+</body>
+</html>

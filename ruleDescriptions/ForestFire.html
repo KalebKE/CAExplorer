@@ -1,0 +1,54 @@
+<html>
+
+<head>
+<title>Forest Fire</title>
+</head>
+
+<body>
+<p>
+<b>Forest Fire</b>
+<p>
+A simple model of forest fires. Trees grow in a forest and slowly age to maturity. Lightning strikes 
+start fires which spread from mature trees to other neighboring mature trees.  Younger trees are "too green" 
+and are not burned. After burning, the bare ground sprouts new trees and the process begins again. 
+When running this simulation, be patient. It can take time to grow a 
+mature forest that burns.<p>
+While too simplistic for modeling real forest fires, this CA is an excellent example of "critical phenomena" and 
+"percolation" from statistical physics.  Although lightning strikes are starting fires all the time, the fires 
+cannot sweep across the forest until the mature trees reach a critical density.  At that critical value, the 
+mature trees form a path from one side of the forest to the other.  In other words, you will not see big fires 
+until the mature trees reach a critical density.
+<p>
+There are many variations on the basic "Forest Fire" CA.  This particular CA has 8 states.  
+<ol>
+	<li><i>Bare ground 
+</i>(shown in brown) is the state from which trees sprout and is the state left after a forest fire has 
+swept through (follows the ashes state). </li>
+	<li><i>Seedlings</i> (lightest green) grow from bare ground. </li>
+	<li><i>Saplings</i> (intermediate green) 
+grow from seedlings. </li>
+	<li><i>Young trees</i> (dark green) grow from saplings.</li>
+	<li><i>Mature trees</i> (darkest green) 
+grow from young trees. </li>
+	<li><i>Burning</i> (yellow) is a mature tree that has caught fire.</li>
+	<li><i>Smoldering</i> (red) follows the burning state (a dying fire).</li>
+	<li><i>Ashes</i> (black) follows smoldering and are the remnants of a fire.</li>
+	</ol>
+<p>
+Bare ground will sprout tree seedlings with probability 0.05. Each tree 
+grows to the next stage with probability 0.01. Mature trees stay 
+mature indefinitely. Lightning strikes and starts a fire on mature 
+trees with probability 0.00001. Fires spread only from mature trees to neighboring mature 
+trees. The fires quickly cycle through the states <i>burning</i> to <i>smoldering</i> to 
+<i>ash</i> 
+to <i>bare ground</i>. Once bare ground, the cycle repeats and new tree seedlings can 
+sprout.</p>
+<p>
+This CA is a probabilistic generalization of <a href="CyclicCA.html">Cyclic CA</a>. In most cyclic CA the 
+trigger number is a constant. In this CA, the trigger number is 0 for most 
+states; but the trigger number is 1 for mature trees which need at least 1 
+burning neighbor to cycle to the next (burning) state.&nbsp; States also cycle 
+to the next state with some probability (rather than always cycling to the next 
+state).</p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+
+<head>
+<title>Outer Totalistic</title>
+</head>
+
+<body>
+<p>
+<b>Neural Net.</b>
+</p>
+<p>Creates a neural net where each cell is a neuron and the lattice geometry 
+provides the connectivity (dendrites and axons) between the neurons.&nbsp; Each 
+neuron takes the weighted sum of its inputs (neighboring cells) and then fires a 
+non-zero output value if the total exceeds a threshold.&nbsp; In this rule, the 
+weights are all 1.0, so the rule is exactly equivalent to an
+<a href="OuterTotalistic.html">Outer Totalistic</a> rule which depends on (1) 
+the sum of its neighbors, and (2) the value of the cell itself considered 
+separately (in this rule, the cell's value is irrelevant).</p>
+<p>Information on artificial neurons are available elsewhere.&nbsp; For those 
+who are curious, all weights are 1.0, and the transfer function is a sigmoid 
+centered at 0.0 (i.e., no bias or extra threshold) with an output scaled between 
+0 (at negative infinity) and the number of states N (at positive infinity).&nbsp; 
+The slope of the sigmoid at the origin is given by 1.0 / (N (M / 2.0))&nbsp; 
+where M is the number of neighbors.&nbsp; This empirically derived slope keeps 
+the simulation near a critical condition that prevents any one state from 
+dominating. </p>
+<p>When the sum of the inputs is passed to the transfer function, the resulting 
+value is the neuron's output.&nbsp; Because this will be a fractional value, 
+this rule rounds the result to the nearest integer value (between 0 and N).</p>
+<p>On a philosophical note, the stable regions of solid color represent neural 
+memory.&nbsp; </p>
+ 
+</body>
+</html>

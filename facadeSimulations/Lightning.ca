@@ -1,0 +1,48 @@
+//ca_width=300
+//max rule number size in digits=30000
+//user_analysis_folder=userAnalyses
+//rewind steps=600
+//import simulation=
+//ca_height=300
+//rectangle_width=14
+//Number of parallel processors=1
+//rule_number=6055785317397
+//Radius=1
+//Random percent per state=
+//maximum_iterations=1000000000
+//display step=1
+//data_file_path=
+//display hyperlinks in separate browser=true
+//facade_is_on=false
+//rectangle_filled=true
+//save_data_file_path=
+//filled color=-16777114
+//standard deviation=5.0
+//ellipse_filled=true
+//delimiters=	
+//update_graphics_at_end=false
+//boundary type=0
+//user_rule_folder=userRules
+//lattice=one-dim (2 neighbor)
+//rectangle_height=1
+//Number of states=3
+//time delay=0
+//Random percent=50
+//ellipse_height=0
+//empty color=-4210689
+//initial state=random
+//DiffusionLimitedAggregation random=25
+//running average=1
+//image_file_path=
+//Color scheme=Default Rainbow
+//store min state history=false
+//lambda=0.6291
+//rule=cellularAutomata.rules.Lightning
+//ellipse_width=1
+//save_data=false
+//
+//END PROPERTIES
+//
+//first generation stored: 0
+//last generation stored: 0
+2	0	0	0	2	2	0	0	1	0	2	2	0	2	0	0	0	1	0	1	1	0	2	0	0	0	0	2	2	0	0	2	0	1	0	2	0	0	2	0	0	0	2	1	0	2	0	1	1	1	2	0	1	1	0	2	2	1	0	0	0	0	2	0	2	1	2	0	2	1	1	1	0	2	1	0	1	0	1	0	0	0	0	0	2	1	1	0	1	0	1	0	1	0	1	2	1	2	0	1	2	1	0	0	0	0	0	2	2	2	1	1	2	1	0	2	2	0	1	0	1	0	1	0	0	0	0	1	2	0	0	2	0	2	2	1	0	1	0	1	0	2	0	0	2	0	0	0	0	1	0	0	0	0	0	1	2	0	2	0	2	1	2	0	1	0	1	0	0	1	0	1	1	2	0	2	1	0	1	0	2	0	0	2	0	0	1	0	0	0	2	0	2	0	0	0	0	0	2	1	2	2	0	0	0	1	0	0	1	0	1	2	0	1	2	0	0	2	0	2	0	0	0	1	0	2	1	1	2	0	2	0	2	0	2	0	0	2	0	0	2	2	0	0	1	1	2	1	0	0	0	2	2	2	0	0	0	0	0	1	2	2	0	2	0	1	0	0	0	0	2	1	0	2	0	0	1	0	0	0	1	2	0	0	0	0	1	2	2	2	2	2	2	2	2	0	0	2	1	0

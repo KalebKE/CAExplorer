@@ -1,0 +1,24 @@
+<html>
+
+<head>
+<title>Diffusion</title>
+</head>
+
+<body>
+<p>
+<b>Diffusion</b>
+<p>
+Each occupied cell takes a random walk.  The net effect is that a tight ball of 
+occupied cells will slowly diffuse.  In fact, careful analysis (and a very large 
+grid) shows that this simulation reproduces the heat/diffusion equation:  
+&#8706;&#961;/&#8706;t = &#8711;<sup>2</sup>&#961;. 
+<p>
+How's it work?  Each cell lives in a 2 by 2 Margolus neighborhood.  All of the 
+cells in the neighborhood are randomly rearranged.  This conserves particles (or 
+"mass"), and no two particles will occupy the same cell (a "Pauli exclusion 
+principle").
+<p>
+The same simulation could be accomplished using a lattice-gas style simulation 
+on a regular (non-Margolus) lattice.
+</body>
+</html>

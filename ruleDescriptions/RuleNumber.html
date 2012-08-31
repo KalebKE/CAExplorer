@@ -1,0 +1,98 @@
+<html>
+
+<head>
+<title>Rule Number</title>
+</head>
+
+<body>
+<p>
+<b>Rule Number</b>
+</p>
+<p>
+This creates a rule from an integer, using a cellular-automata numbering scheme popularized by Stephen Wolfram.  <b>All</b> possible integer-based cellular automata rules can be constructed from their corresponding number, so this rule is very comprehensive.  However, in practice, there are some limitations described below.  For a quick introduction to the huge range of possibilities, try rule numbers 30, 90, 120, 122, and 126 on a one-dim (2 neighbor) lattice with two states.
+<p>
+How does the numbering scheme work? On a one-dim (2 neighbor) lattice with two states (0 and 1), consider a triplet of sites formed by the left neighbor, the cell itself, and the right neighbor.  For example, 110 is a triplet where the left neighbor is 1, the cell itself in the middle is 1, and the right neighbor is 0.  Each possible triplet is mapped to a particular state of 0 or 1. For example, 000 might map to 0, 001 to 1, etc., as shown below. 
+<p align="center">
+000 &#8594; 0 <br>
+001 &#8594; 1 <br>
+010 &#8594; 1 <br>
+011 &#8594; 0 <br>
+100 &#8594; 0 <br>
+101 &#8594; 1 <br>
+110 &#8594; 1 <br>
+111 &#8594; 1 <br>
+</p>
+<p>
+Taken together, the triplets all map to 11100110 or the number 230. Therefore, if you type in 230, then the rule will use the mappings shown above.
+</p>
+<p>
+With three states, the scheme is similar except that there are more triplets and they can map to state values of 0, 1, or 2.  For example,
+<p align="center">
+000 &#8594; 0 <br>
+001 &#8594; 1 <br>
+002 &#8594; 2 <br>
+010 &#8594; 1 <br>
+011 &#8594; 0 <br>
+012 &#8594; 0 <br>
+020 &#8594; 2 <br>
+021 &#8594; 1 <br>
+022 &#8594; 1 <br>
+100 &#8594; 0 <br>
+101 &#8594; 1 <br>
+102 &#8594; 1 <br>
+110 &#8594; 2 <br>
+111 &#8594; 1 <br>
+112 &#8594; 1 <br>
+120 &#8594; 0 <br>
+121 &#8594; 0 <br>
+122 &#8594; 0 <br>
+200 &#8594; 0 <br>
+201 &#8594; 1 <br>
+202 &#8594; 1 <br>
+210 &#8594; 2 <br>
+211 &#8594; 1 <br>
+212 &#8594; 1 <br>
+220 &#8594; 0 <br>
+221 &#8594; 1 <br>
+222 &#8594; 0 <br>
+</p>
+<p>
+This corresponds to 010112110000112110112001210 or the rule number 98390286777 (in base 10).
+<p>
+Obviously, the number of rules increases astronomically with the number of states.  In fact, it's a double-exponential k<sup>(k^N)</sup> where k is the number of states and N is the number of neighbors (including the cell itself).  So in the first example with two states and 3 neighbors, there are 2<sup>(2^3)</sup>, or 2<sup>8</sup>, or 256 possible rules. The rules start at 0 (rather than 1), so the user can enter a rule number between 0 and 255.
+<p>
+In the second example, there are 3<sup>(3^3)</sup>, or 3<sup>27</sup> or 7,625,597,484,987 possible rules, numbered from 0 to 7,625,597,484,986.
+<p> 
+In two-dimensions, the numbers are mind-bogglingly large.  With a square (nearest-neighbor) lattice, there are 9 neighbors (including the cell itself).  Assuming just two states, that's 1.34 X 10<sup>154</sup> possible rules!  Compare that to 10<sup>80</sup>, roughly the number of atoms in the universe.
+</p>
+<p>
+In two dimensions, there is no universally accepted convention for arranging cells like the triplets in one dimension.  <i>The convention adopted here</i> is that neighbors are numbered starting in the northwest corner and rotating counter-clockwise.  The cell itself is tagged on at the end.  The tooltips for each lattice give examples.  For example, in a square nearset-neighbor lattice
+<pre>
+                123
+                8x4
+                765
+</pre>
+is transformed to 12345678x.  That means there are nine positions, and each 9-tuple is mapped to a state value.  For example, with two states, the neighbors and cell might have the following values
+<pre>
+                101
+                100
+                100
+</pre>
+These form the 9-tuple 101000110.  This 9-tuple might map to the value 1.  i.e., 101000110 &#8594; 1. The entire list of mappings would be
+<p align="center">
+000000000 &#8594; 0 <br>
+000000001 &#8594; 1 <br>
+000000010 &#8594; 1 <br>
+000000011 &#8594; 0 <br>
+... <br>
+111111110 &#8594; 0 <br>
+111111111 &#8594; 1 <br>
+</p>
+<p>
+I won't bother listing all 512 possible mappings.
+</p>
+<p>
+Because of the size of the rule numbers, two practical limits have been placed on this rule.  (1) The number of states must be between 2 and 36. (2) The length of the rule number is restricted to 30,000 digits long (in the base of the rule number).  Very few people have the patience to type 200 digit rule numbers let alone 30,000 digits, but if you want more, the "System&#8594;Set Maximum Rule Size" menu item will let you increase this number up to 2,147,483,647.  If you need more states or more digits than that, I'll be surprised, but contact me and I'll write a special rule to handle bigger numbers.
+</body>
+
+</html>

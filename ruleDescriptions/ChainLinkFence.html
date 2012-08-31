@@ -1,0 +1,35 @@
+<html>
+
+<head>
+<title>Chain Link Fence</title>
+</head>
+
+<body>
+<p>
+<b>Chain Link Fence</b>
+<p>
+When starting from a single seed, this rule builds a chain link fence that 
+pulses while under construction.&nbsp; The number of states determines the 
+distance between links in the fence.<p>
+A more accurate description is given below, but essentially, each cell updates 
+it's value to be one larger than it's smallest neighbor located to the North, 
+South, East, and West.&nbsp; If the incremented cell is larger than the number 
+of states, then it is wrapped-around to a value of 1 (not to 0, because that is 
+used as an empty state that is not part of the fence).&nbsp; If all of the 
+North, South, East, and West neighbors are 0, then the cell becomes a 0 as well.<p>
+In detail, each cell updates it's value by the following rules:<ol>
+	<li>If the cell value is 1, it stays that value. (This is a 
+	link/intersection on the chain link fence.)</li>
+	<li>If the minimum of all the neighbors is less than the minimum of the 
+	neighbors to the North, South, East, and West, then the cell becomes a 0. 
+	(In this situation, the cell is not located on the chain link fence and 
+	should have the empty value.)</li>
+	<li>If the minimum of all the neighbors is greater than or equal to the 
+	minimum of the neighbors to the North, South, East, and West, then the cell 
+	increments by one.&nbsp; If this increases the cell beyond the number of 
+	states, then it is &quot;wrapped around&quot; and assigned a value of 1 (the smallest 
+	value that can be part of the fence). (In this situation, the cell is on the 
+	chain link fence and needs to become part of the fence).</li>
+	</ol>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+
+<head>
+<title>Sears Tower</title>
+</head>
+
+<body>
+<p>
+<b>Sears Tower</b>
+<p>
+Creates an unusual fractal sky scraper. Unlike most CA, this one relies on information 
+about the current generation (time step).  In effect, this means that the rule changes 
+slightly depending on the generation. In particular, the rule calculates the modified 
+sum of a cell and its neighbors using the following formula: 
+<pre>
+new cell value = (cell + (generation * (sum of neighbors)) % 3) % N 
+</pre>
+where N is the number of states. Therefore, the same rule repeats every three time steps.
+<p>
+Invented by David Bahr.
+</body>
+
+</html>

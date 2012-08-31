@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<title>Q2R Ising (Jiggly Water Balloon)</title>
+</head>
+
+<body>
+<p>
+<b>Q2R Ising (Jiggly Water Balloon)</b>
+
+<p>
+
+
+
+What? Jiggly water balloon? Will such a name make dead physicists roll over in 
+their grave? No, hang with me to the end, and I'll explain. Just like the Ising model, this is a simulation of the way clusters of magnetism 
+or &quot;magnetic domains&quot; form and move around in an iron bar. For more information about the underlying 
+physics, first read about the <a href="IsingModel.html">Ising Model</a> rule. A rough 
+understanding the Ising model will facilitate an understanding of this rule (and 
+vice-versa). But as a simple starter, just remember that each cell more-or-less represents a 
+tiny atomic-sized magnet that spins like a top and points either up or down (has 
+a value 0 or 1). We get magnets when all or most of the spins are pointing in 
+the same direction.<p>A cell in an Ising model will flip its spin (change values) 
+whenever that flip minimizes energy. See the <a href="IsingModel.html">Ising Model</a> 
+rule for details about energy, but for now, remember that there is a unit of energy 
+whenever two adjacent spins are opposite (an up-spin next to a down-spin). If we 
+visualize each spin as an arrow, then we can imagine that the top of each 
+neighboring arrow is connected by a spring. When two adjacent arrows are 
+pointing in the same direction, then the spring is relaxed. But when the 
+adjacent arrows are pointing in opposite directions, then the spring is under 
+tension, and there is a resulting unit of potential energy (that can be released 
+and minimized if the spin flips).</p>
+<p>By contrast, a cell in the Q2R model will only flip if such a 
+change exactly conserves energy. The cellular automaton rule is &quot;always flip if 
+surrounded by an equal number of 0's and 1's, and never flip under any other 
+circumstances.&quot; In other words, the cell will flip only if it 
+has an equal number of neighbors with spin up and spin down. In other words, the 
+spring tension (and energy) is the same no matter which way the arrow points, so 
+the arrow can flip without changing the energy. Therefore, the Q2R model conserves 
+energy at a microscopic scale (the scale of our tiny atomic-sized magnets). For that reason, the Q2R model is called 
+&quot;microcanonical&quot;. </p>
+<p>On the other hand, the Ising model conserves energy, but only on a 
+macroscopic scale by keeping the whole simulation at a constant temperature with it's 
+surroundings (as if the model has been sunk into a nice warm fixed-temperature 
+bathtub or &quot;heat bath&quot;). So energy in an Ising model is conserved only &quot;on average&quot;, 
+and the Ising model is called &quot;canonical&quot;.&nbsp; In short, &quot;microcanonical&quot; 
+= fixed energy and a fixed number of particles (little tiny magnets in our 
+case); &quot;canonical&quot; = variable energy but fixed number of particles; and in case 
+you are curious, &quot;grand canonical&quot; = variable energy and a variable number of 
+particles. FYI, in a &quot;canonical&quot; system, temperature and heat baths are 
+introduced as a way to control the variable energy.</p>
+<p>
+
+
+
+Ok, so why the name &quot;jiggly water balloon&quot;? Run the Q2R model for a 
+while, and you'll notice that the number of 1's and 0's changes with time. There 
+are fixed number of cells or particles (i.e., a fixed number of tiny 
+atomic-sized magnets), but their spin can change and be up (0) or down (1). So 
+in this microcanonical case, 
+the number of 1's and 0's are not conserved. However, the <i>length of the 
+boundary</i> between the 1's and 0's <i>is conserved</i>. The boundary is a 
+visual representation of where all the energy is kept and conserved in the system. You can see 
+this very easily by creating a symmetric shape, like a &quot;filled circle&quot; or water 
+balloon, and watching it evolve over time. The balloon will jiggle like a bowl 
+full of jelly and the boundary will deform, but the length of the boundary 
+(energy!) remains fixed. Now that's cool! By the way, for fun, try popping the balloon by 
+poking it (clicking) with the mouse near it's edge.<p>
+
+
+
+Incidentally, the rule is completely deterministic and reversible (it's 
+equivalent to a second-order reversible rule -- see my
+<a href="http://academic.regis.edu/dbahr/GeneralPages/CellularAutomata/CA_part7_files/frame.htm">
+lecture notes</a>). Also, if you start from a random initial state (like 15% 
+randomly filled with 1's), then the number of 1's and 0's will quickly 
+equilibrate to half of each. To see this, turn on the &quot;Average&quot; analysis and 
+notice that the system will evolve to an average value of 0.5. 
+
+<p>
+Finally, note that the rule uses a checkerboard lattice pattern as described in the 
+<a href="IsingModel.html">Ising Model</a> rule. For additional details see the excellent reference, 
+<i>Cellular Automata Machines</i> by Tofoli and Margolus, 1991, Chapter 17.
+
+
+</body>
+
+</html>

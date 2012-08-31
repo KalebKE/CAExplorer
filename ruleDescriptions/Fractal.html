@@ -1,0 +1,44 @@
+<html>
+
+<head>
+<title>Fractal Average</title>
+</head>
+
+<body>
+<p>
+<b> Fractal Average.</b>
+</p>
+<p>
+Generates Mandelbrot and Julia fractals from a CA that uses complex numbers as values for each cell. 
+<p>
+The CA rule is simple and is nothing more than a recasting of the "Average" rule.  
+Each cell is f(a) where "a" is the average of the cell 
+and its neighbors.  The function f is "i tan(z)" by default, but may be reset 
+in the "More Properties" window to other complex functions like f = i sin, (i+1) cos, i sinh, (i+1) tanh, etc. 
+<p>
+At first pass, this rule looks nearly the same as <a href="FractalIteration.html">Fractal No Neighbor</a>.  
+However, for a very convincing 
+demonstration of their difference, try each rule using a 50% random initial state.  This rule has far more 
+interesting behavior in that case.
+<p>
+What is interesting is not the rule but the way in which the cell's are viewed. 
+Each cell can be viewed as either the complex modulus (a shaded value that 
+depends on the distance from origin) or as a fractal.  Fractals are derived from 
+the equation z = z<sup>2</sup> + c where z (the value of the cell) is iterated repeatedly. 
+If the value diverges, the cell is given a light (or empty) color.  If the value 
+converges, the cell is given a dark (or full) color.  The rate at which it diverges 
+determines shades in between -- the faster the divergence then the lighter the color, 
+and the slower the divergence then the darker the color. 
+<p>
+The Mandelbrot set is derived when c is set to the initial value of the cell.  A 
+Julia set is derived when c is a fixed value for all cells.  For Julia sets, the 
+value of c may be set in the "More Properties" window. 
+<p>
+Clearly, a relatively simple CA can take fascinating shapes and patterns when
+viewed in a "different light" as a fractal.  In fact, that's the real lesson here.  
+<b>There 
+is no one correct way to display a cellular automaton, and different displays may highlight 
+otherwise hidden information.</b>
+</body>
+
+</html>
