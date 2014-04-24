@@ -42,12 +42,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import userRules.MajorityFinanceV1;
-import userRules.MajorityMarketWithVolume;
-
+import userRules.CellularMarketModel;
 import cellularAutomata.CAController;
-import cellularAutomata.CurrentProperties;
 import cellularAutomata.Cell;
+import cellularAutomata.CurrentProperties;
 import cellularAutomata.cellState.model.IntegerCellState;
 import cellularAutomata.cellState.view.CellStateView;
 import cellularAutomata.graphics.CAFrame;
@@ -70,7 +68,7 @@ public class PricingAnalysis extends Analysis implements ActionListener
 {
 	// the maximum number of elements that will be plotted on the time series
 	// plot
-	private static final int MAX_NUMBER_TO_PLOT = 100;
+	private static final int MAX_NUMBER_TO_PLOT = 200;
 
 	// the maximum number of states that will be allowed for this analysis to
 	// run
@@ -122,11 +120,9 @@ public class PricingAnalysis extends Analysis implements ActionListener
 	private boolean plotZeroState = true;
 
 	// the percent of each state
-	private double[] percentOccupiedByState = null;
+	private double[] marketValue = null;
 
 	private double[] price = null;
-
-	private double[] fundamental = null;
 
 	// if the user wants to save the data to a file, this will be instantiated
 	private FileWriter fileWriter = null;
@@ -160,11 +156,11 @@ public class PricingAnalysis extends Analysis implements ActionListener
 	private JPanel displayPanel = null;
 
 	// the list of points that will be drawn on the plot
-	private LinkedList<Point2D.Double> percentOccupiedList = new LinkedList<Point2D.Double>();
+	private LinkedList<Point2D.Double> priceList = new LinkedList<Point2D.Double>();
 
 	// the list of points that will be drawn on the time series plot. Note each
 	// element of the array is for a different state.
-	private LinkedList<Point2D.Double>[] timeSeriesOfPercentOccupiedList = null;
+	private LinkedList<Point2D.Double>[] timeSeriesOfPriceList = null;
 
 	// a panel that plots the pricing data
 	private SimplePlot plot = null;
@@ -225,7 +221,6 @@ public class PricingAnalysis extends Analysis implements ActionListener
 			Qt = new int[numberOfStates];
 
 			price = new double[numberOfStates];
-			fundamental = new double[numberOfStates];
 
 			Random r = new Random();
 
@@ -267,10 +262,10 @@ public class PricingAnalysis extends Analysis implements ActionListener
 
 				// note that you cannot create an array of generics without
 				// this workaround :-(
-				timeSeriesOfPercentOccupiedList = new LinkedList[numberOfStates];
-				for (int i = 0; i < timeSeriesOfPercentOccupiedList.length; i++)
+				timeSeriesOfPriceList = new LinkedList[numberOfStates];
+				for (int i = 0; i < timeSeriesOfPriceList.length; i++)
 				{
-					timeSeriesOfPercentOccupiedList[i] = new LinkedList<Point2D.Double>();
+					timeSeriesOfPriceList[i] = new LinkedList<Point2D.Double>();
 				}
 			}
 		}
@@ -582,7 +577,7 @@ public class PricingAnalysis extends Analysis implements ActionListener
 
 		// set the max y value on the plot
 		double maxYValue = 0.0;
-		Iterator<Point2D.Double> iterator = percentOccupiedList.iterator();
+		Iterator<Point2D.Double> iterator = priceList.iterator();
 		while (iterator.hasNext())
 		{
 			Point2D.Double point = iterator.next();
@@ -710,7 +705,7 @@ public class PricingAnalysis extends Analysis implements ActionListener
 		}
 		plot.setPointDisplayColors(colorArray);
 
-		plot.drawPoints(percentOccupiedList);
+		plot.drawPoints(priceList);
 	}
 
 	/**
@@ -725,13 +720,13 @@ public class PricingAnalysis extends Analysis implements ActionListener
 		{
 			startPosition = 1;
 		}
-		for (int i = startPosition; i < timeSeriesOfPercentOccupiedList.length; i++)
+		for (int i = startPosition; i < timeSeriesOfPriceList.length; i++)
 		{
-			allPoints.addAll(timeSeriesOfPercentOccupiedList[i]);
+			allPoints.addAll(timeSeriesOfPriceList[i]);
 		}
 
 		// set the min and max values on the plot
-		Point2D firstPoint = (Point2D) timeSeriesOfPercentOccupiedList[0]
+		Point2D firstPoint = (Point2D) timeSeriesOfPriceList[0]
 				.getFirst();
 		timeSeriesPlot.setMaximumXValue(firstPoint.getX() + MAX_NUMBER_TO_PLOT
 				- 1);
@@ -826,12 +821,12 @@ public class PricingAnalysis extends Analysis implements ActionListener
 		Color[] colorArray = new Color[allPoints.size()];
 		CellStateView view = Cell.getView();
 
-		for (int state = startPosition; state < timeSeriesOfPercentOccupiedList.length; state++)
+		for (int state = startPosition; state < timeSeriesOfPriceList.length; state++)
 		{
 			Color stateColor = view.getDisplayColor(
 					new IntegerCellState(state), null, new Coordinate(0, 0));
 
-			int listLength = timeSeriesOfPercentOccupiedList[state].size();
+			int listLength = timeSeriesOfPriceList[state].size();
 			for (int j = 0; j < listLength; j++)
 			{
 				colorArray[(state - startPosition) * listLength + j] = stateColor;
@@ -932,7 +927,7 @@ public class PricingAnalysis extends Analysis implements ActionListener
 				numberOccupiedByState[state.toInt()]++;
 			}
 
-			percentOccupiedByState = new double[numberOfStates];
+			marketValue = new double[numberOfStates];
 
 			if (previousNumOccupiedByState[0] == 0)
 			{
@@ -940,25 +935,10 @@ public class PricingAnalysis extends Analysis implements ActionListener
 			}
 
 			// Long term derivative version
-			for (int i = 0; i < percentOccupiedByState.length; i++)
+			for (int i = 0; i < marketValue.length; i++)
 			{
-//				// long term derivative
-//				// finds the change (derivative) in the number of each asset
-//				Qt[i] = numberOccupiedByState[i]
-//						- previousNumOccupiedByState[i];
-//				// Qt[i] =(int) (fundamental[i] - price[i]);
-//
-//				// then divide by total number of traders to normalize
-//				// multiply by a scaler that reflects how much
-//				// traders react to a change in the long term derivative
-//				price[i] = price[i] + .05 * ((Qt[i]));
-//				if (price[i] < 0)
-//				{
-//					price[i] = 0;
-//				}
-
 				// move the price out to an array to graph the data
-				percentOccupiedByState[i] = MajorityFinanceV1.getPrice()[i];
+				marketValue[i] = CellularMarketModel.getCurrentMarketValue()[i];
 			}
 
 			// finally, make the current state the previous state
@@ -973,22 +953,22 @@ public class PricingAnalysis extends Analysis implements ActionListener
 				startStateOnPlot = 0;
 			}
 
-			percentOccupiedList.clear();
-			for (int state = startStateOnPlot; state < percentOccupiedByState.length; state++)
+			priceList.clear();
+			for (int state = startStateOnPlot; state < marketValue.length; state++)
 			{
-				percentOccupiedList.add(new Point2D.Double(state,
-						percentOccupiedByState[state]));
+				priceList.add(new Point2D.Double(state,
+						marketValue[state]));
 			}
 
 			// save a time series of the percentOccupied in a linked list for
 			// plotting. *Do* include the zero state, even when not plotting it.
-			for (int state = 0; state < percentOccupiedByState.length; state++)
+			for (int state = 0; state < marketValue.length; state++)
 			{
-				timeSeriesOfPercentOccupiedList[state].add(new Point2D.Double(
-						generation, percentOccupiedByState[state]));
-				if (timeSeriesOfPercentOccupiedList[state].size() > MAX_NUMBER_TO_PLOT)
+				timeSeriesOfPriceList[state].add(new Point2D.Double(
+						generation, marketValue[state]));
+				if (timeSeriesOfPriceList[state].size() > MAX_NUMBER_TO_PLOT)
 				{
-					timeSeriesOfPercentOccupiedList[state].removeFirst();
+					timeSeriesOfPriceList[state].removeFirst();
 				}
 			}
 
@@ -1003,18 +983,18 @@ public class PricingAnalysis extends Analysis implements ActionListener
 
 			// and set the text for the percent label, but format!
 			DecimalFormat percentFormatter = new DecimalFormat(DECIMAL_PATTERN);
-			for (int i = 0; i < percentOccupiedByState.length; i++)
+			for (int i = 0; i < marketValue.length; i++)
 			{
 				String output = percentFormatter
-						.format(percentOccupiedByState[i]);
+						.format(marketValue[i]);
 				percentOccupiedByStateDataLabel[i].setText(output);
 			}
 
 			// create an array of data to be saved
 			data[0] = "" + generation;
-			for (int i = 0; i < percentOccupiedByState.length; i++)
+			for (int i = 0; i < marketValue.length; i++)
 			{
-				data[i + 1] = "" + percentOccupiedByState[i];
+				data[i + 1] = "" + marketValue[i];
 			}
 
 			// see if user wants to save the data
@@ -1076,20 +1056,20 @@ public class PricingAnalysis extends Analysis implements ActionListener
 			}
 		} else if (command.equals(PLOT_ZERO_STATE))
 		{
-			if (percentOccupiedList != null
+			if (priceList != null
 					&& plotZeroStateCheckBox.isSelected())
 			{
 				// they want the zero state to be plotted
 				plotZeroState = true;
-				percentOccupiedList.addFirst((new Point2D.Double(0,
-						percentOccupiedByState[0])));
+				priceList.addFirst((new Point2D.Double(0,
+						marketValue[0])));
 			} else
 			{
 				// they don't want the zero state to be plotted
 				plotZeroState = false;
-				if (percentOccupiedList.size() > 0)
+				if (priceList.size() > 0)
 				{
-					percentOccupiedList.removeFirst();
+					priceList.removeFirst();
 				}
 			}
 
@@ -1219,14 +1199,14 @@ public class PricingAnalysis extends Analysis implements ActionListener
 
 		// reset all the variables
 		plotZeroState = true;
-		percentOccupiedByState = null;
+		marketValue = null;
 		fileWriter = null;
 		saveDataCheckBox = null;
 		plotZeroStateCheckBox = null;
 		generationDataLabel = null;
 		numberOccupiedByStateDataLabel = null;
 		percentOccupiedByStateDataLabel = null;
-		percentOccupiedList = new LinkedList<Point2D.Double>();
+		priceList = new LinkedList<Point2D.Double>();
 		plot = null;
 		timeSeriesPlot = null;
 		data = null;
